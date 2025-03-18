@@ -101,21 +101,7 @@ export default function Header() {
                         type="submit"
                         className="absolute top-1/2 -translate-y-1/2 end-0 p-2 z-10 md:p-2.5 rounded-r-full text-sm font-medium border-l border-l-gray-300 hover:text-gray-500 cursor-pointer"
                       >
-                        <svg
-                          className="size-3 md:size-4"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                          />
-                        </svg>
+                        <MagnifyingGlassIcon className="size-3 md:size-4" />
                       </button>
                     </div>
                   </div>
@@ -133,19 +119,19 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="bg-[#3FB871]">
+        <div className="bg-main">
           <div className="flex justify-start items-center font-semibold text-sm max-w-5xl m-auto text-white">
             {/* <div className="flex items-center justify-center">
             <Bars3Icon className="size-4 md:size-6 mr-4" />
           </div> */}
             <ul className="flex items-start text-xs md:text-sm text-left font-normal">
-              <li className="py-2.5 px-4 hover:bg-[#36A66D] text-white">
+              <li className="py-2.5 px-4 hover:bg-hover text-white">
                 <a href="#">TRANG CHỦ</a>
               </li>
-              <li className="py-2.5 px-4 hover:bg-[#36A66D]">
+              <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#">GIỚI THIỆU</a>
               </li>
-              <li className="py-2.5 px-4 hover:bg-[#36A66D]">
+              <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#" className="flex items-center">
                   SẢN PHẨM
                   <span>
@@ -153,7 +139,7 @@ export default function Header() {
                   </span>
                 </a>
               </li>
-              <li className="py-2.5 px-4 hover:bg-[#36A66D]">
+              <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#" className="flex items-center">
                   SẢN PHẨM MỚI
                   <span>
@@ -161,10 +147,10 @@ export default function Header() {
                   </span>
                 </a>
               </li>
-              <li className="py-2.5 px-4 hover:bg-[#36A66D]">
+              <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#">TIN TỨC</a>
               </li>
-              <li className="py-2.5 px-4 hover:bg-[#36A66D]">
+              <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#">LIÊN HỆ</a>
               </li>
             </ul>
@@ -178,7 +164,7 @@ export default function Header() {
           <img src={Logo} alt="logo" className="w-full sm:hidden" />
         </div>
         <div
-          className={`sm:hidden grid grid-cols-8 bg-[#3FB871] text-white h-[70px] z-50 transition-all duration-300 ${isSticky ? "fixed top-0 w-full shadow-lg" : ""}`}
+          className={`sm:hidden grid grid-cols-8 bg-main text-white h-[70px] z-50 transition-all duration-300 ${isSticky ? "fixed top-0 w-full shadow-lg" : ""}`}
         >
           <div
             className="p-2.5 col-span-1 cursor-pointer hover:opacity-70 flex justify-start items-center"
@@ -220,17 +206,17 @@ export default function Header() {
 
           {isMobileHeaderDisplayed && (
             <ul className="fixed lg:hidden top-[70px] left-0 w-full flex flex-col items-start z-10 text-gray-500 bg-white text-sm text-left">
-              <li className="w-full pl-2 py-2 hover:bg-[#36A66D] hover:text-white">
+              <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
                 <a href="/" className="flex items-center">
                   TRANG CHỦ
                 </a>
               </li>
-              <li className="w-full pl-2 py-2 hover:bg-[#36A66D] hover:text-white">
+              <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
                 <a href="#" className="flex items-center">
                   GIỚI THIỆU
                 </a>
               </li>
-              <li className="w-full pl-2 py-2 hover:bg-[#36A66D] hover:text-white">
+              <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
                 <a href="#" className="flex items-center">
                   SẢN PHẨM
                   <span>
@@ -238,7 +224,7 @@ export default function Header() {
                   </span>
                 </a>
               </li>
-              <li className="w-full pl-2 py-2 hover:bg-[#36A66D] hover:text-white">
+              <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
                 <a href="#" className="flex items-center">
                   SẢN PHẨM MỚI
                   <span>
@@ -246,12 +232,12 @@ export default function Header() {
                   </span>
                 </a>
               </li>
-              <li className="w-full pl-2 py-2 hover:bg-[#36A66D] hover:text-white">
+              <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
                 <a href="#" className="flex items-center">
                   TIN TỨC
                 </a>
               </li>
-              <li className="w-full pl-2 py-2 hover:bg-[#36A66D] hover:text-white">
+              <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
                 <a href="#" className="flex items-center">
                   LIÊN HỆ
                 </a>
