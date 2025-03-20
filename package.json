@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "server": "json-server --watch server/db.json --port 5000",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "globals": "^15.15.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "json-server": "^1.0.0-beta.3",
     "vite": "^6.2.0"
   }
 }

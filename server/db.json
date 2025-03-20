@@ -1,0 +1,509 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@example.com",
+      "phone": "+8412345678",
+      "social_link": "https://www.facebook.com/SAFT.H503",
+      "password": "password",
+      "role": "quản trị viên"
+    },
+    {
+      "id": 2,
+      "email": "user1@example.com",
+      "phone": "+8423456789",
+      "social_link": "https://www.facebook.com/ltl.1506/",
+      "password": "password",
+      "role": "người dùng"
+    },
+    {
+      "id": 3,
+      "email": "user2@example.com",
+      "phone": "+8434567890",
+      "social_link": "https://www.facebook.com/profile.php?id=100072532142749",
+      "password": "password",
+      "role": "người dùng"
+    }
+  ],
+  "trees": [
+    {
+      "id": 1,
+      "name": "Phong Nhật Bản",
+      "science_name": "Acer palmatum",
+      "ratings": [
+        {
+          "username": "user1@example.com",
+          "rating": 5,
+          "content": "Cây đẹp tuyệt vời, màu sắc rất rực rỡ!",
+          "created_at": "2023-10-15T09:00:00Z"
+        },
+        {
+          "user_id": "user2@example.com",
+          "rating": 5,
+          "content": "Cây khỏe mạnh, được giao trong tình trạng tuyệt vời",
+          "created_at": "2023-10-16T14:30:00Z"
+        }
+      ],
+      "price": 350000,
+      "old_price": 400000,
+      "category": 1,
+      "color": "Đỏ",
+      "description": "Một loại cây rụng lá nhỏ với lá hình bàn tay rộng, chuyển sang màu đỏ rực vào mùa thu.",
+      "information": {
+        "family": "Sapindaceae",
+        "height": "4.5-7.5 mét",
+        "full_description": "Cây Phong Nhật Bản nổi tiếng với màu sắc tuyệt đẹp và hình dáng thanh lịch. Chúng thích hợp trồng ở nơi có bóng râm một phần và đất thoát nước tốt. Cây thường cao từ 4.5 đến 7.5 mét với tán rộng 4.5-6 mét. Loại này có lá đỏ cắt sâu, chuyển sang màu đỏ thắm rực rỡ vào mùa thu. Đây là lựa chọn hoàn hảo làm điểm nhấn trong vườn hoặc sân hiên, tạo nên một bóng dáng ấn tượng với kiểu phân nhánh tầng lớp. Cần tưới nước vừa phải và bảo vệ khỏi gió mạnh."
+      },
+      "image": [
+        "/images/spx2-1.png",
+        "/images/spx2-2.png",
+        "/images/spx2-3.png"
+      ],
+      "tags": ["Rụng lá", "Cây cảnh", "Bóng râm"]
+    },
+    {
+      "id": 2,
+      "name": "Bonsai Sung",
+      "science_name": "Ficus retusa",
+      "ratings": [
+        {
+          "user_id": "user1@example.com",
+          "rating": 5,
+          "content": "Hoàn hảo cho bàn làm việc của tôi, rất thích!",
+          "created_at": "2023-09-20T10:15:00Z"
+        }
+      ],
+      "price": 250000,
+      "old_price": 300000,
+      "category": 2,
+      "color": "Xanh lá",
+      "description": "Một loại cây bonsai trong nhà phổ biến với lá xanh bóng nhỏ và thân xoắn hấp dẫn.",
+      "information": {
+        "family": "Moraceae",
+        "height": "20-30 cm (dạng bonsai)",
+        "full_description": "Bonsai Sung là lựa chọn tuyệt vời cho người mới bắt đầu học nghệ thuật bonsai. Có nguồn gốc từ Đông Nam Á, cây nhỏ này có lá hình oval bóng loáng và thân cây xoắn đặc trưng phát triển rễ trên không theo thời gian. Nó phát triển tốt trong ánh sáng gián tiếp sáng và thích độ ẩm ổn định. Với việc chăm sóc đúng cách bao gồm tỉa cành thường xuyên và cắt tỉa rễ định kỳ, bonsai này có thể sống hàng thập kỷ. Kích thước nhỏ gọn khiến nó lý tưởng cho bàn làm việc, kệ sách hoặc làm trung tâm bàn."
+      },
+      "image": [
+        "/images/spx2-2.png",
+        "/images/spx2-3.png",
+        "/images/spx2-4.png"
+      ],
+      "tags": ["Bonsai", "Trong nhà", "Ít bảo trì"]
+    },
+    {
+      "id": 3,
+      "name": "Cây Kim Tiền",
+      "science_name": "Pachira aquatica",
+      "ratings": [],
+      "price": 180000,
+      "old_price": 200000,
+      "category": 3,
+      "color": "Xanh lá",
+      "description": "Một loại cây trong nhà phổ biến với thân bện và lá giống lá cọ, được tin là mang lại may mắn và thịnh vượng.",
+      "information": {
+        "family": "Malvaceae",
+        "height": "1.8-2.4 mét trong nhà, tới 18 mét trong tự nhiên",
+        "full_description": "Cây Kim Tiền đặc trưng bởi thân bện và lá xanh bóng giống lá cọ, mọc theo hình ngôi sao. Theo nguyên lý phong thủy, nó thu hút tài lộc và năng lượng tích cực. Loại cây nhiệt đới này có nguồn gốc từ Trung và Nam Mỹ. Nó phát triển tốt trong ánh sáng gián tiếp sáng và chỉ nên tưới khi lớp đất trên cùng khô. Là cây ưa ẩm, nó là lựa chọn tuyệt vời cho phòng tắm hoặc nhà bếp. Thân bện thực chất là nhiều cây được trồng cùng nhau và được uốn tỉa cẩn thận khi phát triển."
+      },
+      "image": [
+        "/images/spx2-3.png",
+        "/images/spx2-4.png",
+        "/images/spx2-5.png"
+      ],
+      "tags": ["Trong nhà", "Phong thủy", "Lọc không khí"]
+    },
+    {
+      "id": 4,
+      "name": "Cây Hoa Sứ",
+      "science_name": "Plumeria rubra",
+      "ratings": [],
+      "price": 220000,
+      "old_price": 260000,
+      "category": 5,
+      "color": "Hồng",
+      "description": "Cây hoa nhiệt đới với hoa thơm ngát, thường được trồng làm cảnh trong vườn.",
+      "information": {
+        "family": "Apocynaceae",
+        "height": "3-6 mét",
+        "full_description": "Cây Hoa Sứ là một loại cây nhiệt đới nổi bật với những bông hoa rực rỡ, thơm ngát, thường có màu hồng, trắng hoặc vàng. Cây thích hợp trồng ở nơi có ánh nắng đầy đủ và đất thoát nước tốt. Hoa nở quanh năm ở khí hậu ấm áp, tạo nên vẻ đẹp lãng mạn cho khu vườn. Cây có thể cao từ 3 đến 6 mét, dễ cắt tỉa để kiểm soát kích thước. Ngoài giá trị thẩm mỹ, hoa sứ còn được dùng trong mỹ phẩm và làm nước hoa."
+      },
+      "image": [
+        "/images/spx2-4.png",
+        "/images/spx2-5.png",
+        "/images/spx2-6.png"
+      ],
+      "tags": ["Hoa", "Nhiệt đới", "Cây cảnh"]
+    },
+    {
+      "id": 5,
+      "name": "Cây Lộc Vừng",
+      "science_name": "Barringtonia acutangula",
+      "ratings": [],
+      "price": 300000,
+      "old_price": 350000,
+      "category": 5,
+      "color": "Đỏ",
+      "description": "Cây bóng mát với hoa đỏ rủ dài, thường trồng ven đường hoặc trong sân vườn lớn.",
+      "information": {
+        "family": "Lecythidaceae",
+        "height": "5-15 mét",
+        "full_description": "Cây Lộc Vừng là loại cây bản địa Đông Nam Á, nổi tiếng với những chùm hoa đỏ rủ dài như rèm, nở rộ vào mùa hè. Cây thích nghi tốt với khí hậu nóng ẩm, cần ánh sáng đầy đủ và đất giàu dinh dưỡng. Với chiều cao từ 5 đến 15 mét, nó thường được trồng làm cây bóng mát ở công viên, ven hồ hoặc sân vườn lớn. Hoa không chỉ đẹp mà còn thu hút chim và côn trùng, góp phần vào hệ sinh thái."
+      },
+      "image": [
+        "/images/spx2-5.png",
+        "/images/spx2-6.png",
+        "/images/spx2-7.png"
+      ],
+      "tags": ["Bóng mát", "Hoa", "Cây bản địa"]
+    },
+    {
+      "id": 6,
+      "name": "Cây Đa Búp Đỏ",
+      "science_name": "Ficus elastica",
+      "ratings": [],
+      "price": 200000,
+      "old_price": 250000,
+      "category": 3,
+      "color": "Xanh lá - Đỏ",
+      "description": "Cây trong nhà với lá to bóng, búp non màu đỏ nổi bật, dễ chăm sóc.",
+      "information": {
+        "family": "Moraceae",
+        "height": "1-2 mét trong nhà",
+        "full_description": "Cây Đa Búp Đỏ là loại cây cảnh trong nhà phổ biến với lá to, bóng loáng và búp non màu đỏ rực rỡ. Cây thích nghi tốt với ánh sáng gián tiếp và không cần tưới quá nhiều nước. Với chiều cao từ 1-2 mét trong điều kiện trong nhà, nó là lựa chọn lý tưởng cho phòng khách hoặc văn phòng. Cây còn có khả năng lọc không khí, mang lại không gian sống trong lành."
+      },
+      "image": [
+        "/images/spx2-6.png",
+        "/images/spx2-7.png",
+        "/images/spx2-8.png"
+      ],
+      "tags": ["Trong nhà", "Lọc không khí", "Dễ chăm"]
+    },
+    {
+      "id": 7,
+      "name": "Cây Trầu Bà",
+      "science_name": "Epipremnum aureum",
+      "ratings": [],
+      "price": 150000,
+      "old_price": 180000,
+      "category": 3,
+      "color": "Xanh lá",
+      "description": "Cây leo trong nhà với lá hình tim, thích hợp làm cây treo hoặc để bàn.",
+      "information": {
+        "family": "Araceae",
+        "height": "0.5-1 mét (dạng treo)",
+        "full_description": "Cây Trầu Bà là loại cây leo dễ trồng, thường được dùng làm cây treo hoặc để bàn trong nhà. Lá hình tim màu xanh đậm xen kẽ các đốm vàng tạo điểm nhấn bắt mắt. Cây phát triển tốt trong ánh sáng yếu và cần ít nước, phù hợp cho người bận rộn. Ngoài ra, Trầu Bà còn nổi tiếng với khả năng thanh lọc không khí hiệu quả."
+      },
+      "image": [
+        "/images/spx2-7.png",
+        "/images/spx2-8.png",
+        "/images/spx2-9.png"
+      ],
+      "tags": ["Trong nhà", "Cây leo", "Lọc không khí"]
+    },
+    {
+      "id": 8,
+      "name": "Cây Xoài",
+      "science_name": "Mangifera indica",
+      "ratings": [],
+      "price": 400000,
+      "old_price": 450000,
+      "category": 4,
+      "color": "Xanh lá",
+      "description": "Cây ăn quả phổ biến với trái ngọt, thích hợp trồng trong vườn lớn.",
+      "information": {
+        "family": "Anacardiaceae",
+        "height": "5-10 mét",
+        "full_description": "Cây Xoài là loại cây ăn quả quen thuộc tại Việt Nam, cho trái ngọt, mọng nước, được yêu thích trong ẩm thực và làm cảnh. Cây cần ánh nắng đầy đủ và đất tơi xốp để phát triển tốt. Với chiều cao từ 5-10 mét, nó phù hợp cho vườn nhà hoặc trang trại. Quả xoài chín vào mùa hè, mang lại giá trị kinh tế cao."
+      },
+      "image": [
+        "/images/spx2-8.png",
+        "/images/spx2-9.png",
+        "/images/spx2-10.png"
+      ],
+      "tags": ["Cây ăn quả", "Bóng mát", "Nhiệt đới"]
+    },
+    {
+      "id": 9,
+      "name": "Cây Bàng Singapore",
+      "science_name": "Ficus lyrata",
+      "ratings": [],
+      "price": 280000,
+      "old_price": 320000,
+      "category": 3,
+      "color": "Xanh lá",
+      "description": "Cây trong nhà hiện đại với lá lớn, phù hợp trang trí không gian sống.",
+      "information": {
+        "family": "Moraceae",
+        "height": "1-1.5 mét trong nhà",
+        "full_description": "Cây Bàng Singapore, hay còn gọi là Sung Lá Đàn, là loại cây cảnh trong nhà được ưa chuộng nhờ lá lớn, hình violon độc đáo. Cây cần ánh sáng gián tiếp và độ ẩm vừa phải để duy trì vẻ đẹp. Với chiều cao từ 1-1.5 mét trong nhà, nó thường được đặt ở góc phòng hoặc gần cửa sổ để làm điểm nhấn sang trọng."
+      },
+      "image": [
+        "/images/spx2-9.png",
+        "/images/spx2-10.png",
+        "/images/spx2-11.png"
+      ],
+      "tags": ["Trong nhà", "Cây cảnh", "Hiện đại"]
+    },
+    {
+      "id": 10,
+      "name": "Cây Phượng Vĩ",
+      "science_name": "Delonix regia",
+      "ratings": [],
+      "price": 500000,
+      "old_price": 550000,
+      "category": 5,
+      "color": "Đỏ",
+      "description": "Cây bóng mát với hoa đỏ rực rỡ, thường thấy ở trường học và đường phố.",
+      "information": {
+        "family": "Fabaceae",
+        "height": "10-15 mét",
+        "full_description": "Cây Phượng Vĩ là biểu tượng của mùa hè với những chùm hoa đỏ rực rỡ, thường được trồng làm cây bóng mát ở trường học, công viên hoặc ven đường. Cây cần không gian rộng và ánh nắng đầy đủ để phát triển. Với chiều cao từ 10-15 mét, nó không chỉ đẹp mà còn tạo bóng mát lớn, gắn liền với ký ức tuổi học trò của nhiều người."
+      },
+      "image": [
+        "/images/spx2-10.png",
+        "/images/spx2-11.png",
+        "/images/spx2-12.png"
+      ],
+      "tags": ["Bóng mát", "Hoa", "Cây công cộng"]
+    },
+    {
+      "id": 11,
+      "name": "Cây Chuối Rẻ Quạt",
+      "science_name": "Ravenala madagascariensis",
+      "ratings": [],
+      "price": 350000,
+      "old_price": 400000,
+      "category": 1,
+      "color": "Xanh lá",
+      "description": "Cây cảnh quan với lá lớn xếp như quạt, mang vẻ đẹp nhiệt đới.",
+      "information": {
+        "family": "Strelitziaceae",
+        "height": "5-7 mét",
+        "full_description": "Cây Chuối Rẻ Quạt, còn gọi là cây Lữ Khách, có lá lớn xếp đối xứng như chiếc quạt khổng lồ, tạo vẻ đẹp độc đáo cho sân vườn hoặc không gian công cộng. Cây ưa sáng và đất ẩm, thích hợp với khí hậu nhiệt đới. Cao từ 5-7 mét, nó là điểm nhấn tuyệt vời cho các khu nghỉ dưỡng hoặc biệt thự."
+      },
+      "image": [
+        "/images/spx2-11.png",
+        "/images/spx2-12.png",
+        "/images/spx2-13.png"
+      ],
+      "tags": ["Cây cảnh quan", "Nhiệt đới", "Lá lớn"]
+    },
+    {
+      "id": 12,
+      "name": "Cây Vạn Niên Thanh",
+      "science_name": "Dieffenbachia seguine",
+      "ratings": [],
+      "price": 170000,
+      "old_price": 200000,
+      "category": 3,
+      "color": "Xanh lá - Trắng",
+      "description": "Cây trong nhà với lá xanh xen trắng, mang ý nghĩa trường tồn.",
+      "information": {
+        "family": "Araceae",
+        "height": "0.5-1 mét",
+        "full_description": "Cây Vạn Niên Thanh là loại cây trong nhà mang ý nghĩa phong thủy về sự bền vững và trường tồn. Lá xanh đậm xen kẽ các đốm trắng tạo vẻ đẹp mềm mại. Cây ưa bóng râm và đất ẩm, dễ chăm sóc, phù hợp đặt ở bàn làm việc hoặc góc phòng. Chiều cao từ 0.5-1 mét, nó còn giúp thanh lọc không khí nhẹ nhàng."
+      },
+      "image": [
+        "/images/spx2-12.png",
+        "/images/spx2-13.png",
+        "/images/spx2-14.png"
+      ],
+      "tags": ["Trong nhà", "Phong thủy", "Lọc không khí"]
+    },
+    {
+      "id": 13,
+      "name": "Cây Tùng Bồng Lai",
+      "science_name": "Podocarpus macrophyllus",
+      "ratings": [],
+      "price": 300000,
+      "old_price": 350000,
+      "category": 2,
+      "color": "Xanh lá",
+      "description": "Cây bonsai nhỏ với lá mềm mại, mang vẻ đẹp cổ điển.",
+      "information": {
+        "family": "Podocarpaceae",
+        "height": "30-50 cm (dạng bonsai)",
+        "full_description": "Cây Tùng Bồng Lai là loại bonsai truyền thống với lá mềm, nhỏ, màu xanh đậm, mang vẻ đẹp thanh tao và cổ điển. Cây thích ánh sáng gián tiếp và độ ẩm vừa phải, cần tỉa cành thường xuyên để giữ dáng. Với chiều cao từ 30-50 cm, nó là lựa chọn hoàn hảo cho bàn làm việc hoặc kệ trang trí trong nhà."
+      },
+      "image": [
+        "/images/spx2-13.png",
+        "/images/spx2-14.png",
+        "/images/spx2-15.png"
+      ],
+      "tags": ["Bonsai", "Trong nhà", "Cổ điển"]
+    },
+    {
+      "id": 14,
+      "name": "Cây Hồng Môn",
+      "science_name": "Anthurium andraeanum",
+      "ratings": [],
+      "price": 220000,
+      "old_price": 260000,
+      "category": 5,
+      "color": "Đỏ - Xanh",
+      "description": "Cây trong nhà với hoa đỏ hình tim, mang ý nghĩa tình yêu và hạnh phúc.",
+      "information": {
+        "family": "Araceae",
+        "height": "30-60 cm",
+        "full_description": "Cây Hồng Môn nổi bật với mo hoa đỏ tươi hình trái tim và lá xanh bóng, tượng trưng cho tình yêu và sự thịnh vượng. Cây ưa ánh sáng gián tiếp và độ ẩm cao, thích hợp đặt trong phòng khách hoặc phòng ngủ. Cao từ 30-60 cm, nó không chỉ đẹp mà còn giúp cải thiện chất lượng không khí trong nhà."
+      },
+      "image": [
+        "/images/spx2-14.png",
+        "/images/spx2-15.png",
+        "/images/spx2-16.png"
+      ],
+      "tags": ["Trong nhà", "Hoa", "Phong thủy"]
+    },
+    {
+      "id": 15,
+      "name": "Cây Cau Tiểu Trâm",
+      "science_name": "Chamaedorea elegans",
+      "ratings": [],
+      "price": 190000,
+      "old_price": 230000,
+      "category": 3,
+      "color": "Xanh lá",
+      "description": "Cây nhỏ gọn với lá mảnh, thích hợp làm cây cảnh trong nhà.",
+      "information": {
+        "family": "Arecaceae",
+        "height": "0.5-1.5 mét",
+        "full_description": "Cây Cau Tiểu Trâm là loại cây cảnh nhỏ gọn với lá mảnh, màu xanh tươi, mang lại cảm giác nhẹ nhàng và thanh lịch. Cây chịu bóng tốt và không đòi hỏi chăm sóc nhiều, phù hợp cho không gian nhỏ như văn phòng hoặc căn hộ. Cao từ 0.5-1.5 mét, nó còn có khả năng lọc không khí, rất được ưa chuộng ở đô thị."
+      },
+      "image": [
+        "/images/spx2-15.png",
+        "/images/spx2-16.png",
+        "/images/spx2-17.png"
+      ],
+      "tags": ["Trong nhà", "Nhỏ gọn", "Lọc không khí"]
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Những Loại Cây Tốt Nhất Cho Vườn Trong Nhà",
+      "content": [
+        "Việc làm vườn trong nhà ngày càng trở nên phổ biến khi mọi người muốn mang thiên nhiên vào không gian sống của mình, đặc biệt là ở các đô thị lớn nơi diện tích xanh ngày càng thu hẹp.",
+        "Một số loại cây đặc biệt phù hợp với môi trường trong nhà nhờ khả năng thích nghi cao và yêu cầu chăm sóc thấp, giúp người mới bắt đầu cũng có thể dễ dàng chăm sóc.",
+        "Cây sung, bao gồm cả loại Sung Lá Đàn (Fiddle Leaf Fig) nổi tiếng, là lựa chọn tuyệt vời cho những không gian có ánh sáng gián tiếp mạnh, mang lại vẻ đẹp sang trọng và hiện đại.",
+        "Cây Kim Tiền (Pachira aquatica) không chỉ làm đẹp không gian mà còn được tin rằng mang lại may mắn, tài lộc theo quan niệm phong thủy, rất được ưa chuộng trong các gia đình Việt Nam.",
+        "Ngoài ra, việc chọn cây trong nhà cần chú ý đến ánh sáng, độ ẩm và không gian để cây phát triển tốt nhất, đồng thời kết hợp yếu tố thẩm mỹ với phong cách nội thất."
+      ],
+      "comments": [
+        {
+          "username": "nguoi_yeu_cay",
+          "content": "Tôi đã rất thành công với cây Kim Tiền trong nhà!",
+          "created_at": "2023-10-18T08:45:00Z"
+        },
+        {
+          "username": "nguoi_lam_vuon_moi",
+          "content": "Cảm ơn các mẹo hay, tôi vừa mua cây Sung Lá Đàn đầu tiên!",
+          "created_at": "2023-10-19T15:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Mẹo Chăm Sóc Cây Theo Mùa",
+      "content": [
+        "Khi các mùa thay đổi, việc chăm sóc cây cối cũng cần được điều chỉnh để đảm bảo chúng luôn khỏe mạnh và phát triển tốt qua các điều kiện thời tiết khác nhau.",
+        "Vào mùa xuân, đây là thời điểm lý tưởng để cắt tỉa cành và bón phân cho hầu hết các loại cây, vì chúng bắt đầu giai đoạn sinh trưởng tích cực sau thời kỳ nghỉ đông.",
+        "Trong mùa hè, cần chú trọng đến kỹ thuật tưới nước đúng cách để tránh tình trạng cây bị thiếu nước hoặc căng thẳng do hạn hán, đặc biệt với những cây non mới trồng.",
+        "Mùa thu là thời gian hoàn hảo để trồng cây mới, giúp rễ cây có thời gian phát triển và ổn định trước khi bước vào giai đoạn ngủ đông của mùa đông lạnh giá.",
+        "Vào mùa đông, việc bảo vệ cây là rất quan trọng, đặc biệt với các loài nhạy cảm với lạnh; bạn có thể quấn thân cây bằng vật liệu cách nhiệt hoặc phủ lớp mùn quanh gốc để giữ ấm.",
+        "Ngoài ra, cần theo dõi tình trạng đất và điều chỉnh lượng nước tưới phù hợp với từng mùa, đồng thời kiểm tra sâu bệnh định kỳ để xử lý kịp thời."
+      ],
+      "comments": [
+        {
+          "username": "nguoi_me_vuon",
+          "content": "Nhắc nhở tuyệt vời về việc trồng cây mùa thu! Tôi đang lên kế hoạch thêm vài cây Phong Nhật Bản vào vườn tháng tới.",
+          "created_at": "2023-10-05T11:30:00Z"
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "status": "đã giao",
+      "trees": [
+        {"id": 1, "quantity": 1},
+        {"id": 3, "quantity": 2}
+      ],
+      "address": "123 Đường Vườn, Quận 1, TP.HCM",
+      "phone": "+8423456789"
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "status": "đang xử lý",
+      "trees": [
+        {"id": 2, "quantity": 1}
+      ],
+      "address": "456 Đại Lộ Công Viên, Quận 2, TP.HCM",
+      "phone": "+8434567890"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "suggest_tree": {
+        "name": "Bạch Dương Bạc",
+        "description": "Cây rụng lá kích thước trung với vỏ trắng đặc trưng.",
+        "image": ["bach_duong_bac_request.jpg"]
+      },
+      "status": "đang chờ"
+    },
+    {
+      "id": 2,
+      "suggest_tree": {
+        "name": "Anh Đào Nhật Bản",
+        "description": "Cây hoa anh đào Nhật Bản, nổi tiếng với hoa hồng phấn đẹp vào mùa xuân.",
+        "image": ["anh_dao_nhat_ban_request.jpg", "anh_dao_closeup.jpg"]
+      },
+      "status": "đã duyệt"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Cây Cảnh Quan"
+    },
+    {
+      "id": 2,
+      "name": "Cây Bonsai"
+    },
+    {
+      "id": 3,
+      "name": "Cây Trong Nhà"
+    },
+    {
+      "id": 4,
+      "name": "Cây Ăn Quả"
+    },
+    {
+      "id": 5,
+      "name": "Cây Có Hoa"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "content": "Cây Phong Nhật Bản mới vừa nhập kho!",
+      "url": "/trees/1"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "content": "Đơn hàng #1 của bạn đã được giao",
+      "url": "/orders/1"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "content": "Ưu đãi đặc biệt cho cây Bonsai trong tuần này",
+      "url": "/category/2"
+    }
+  ]
+}
