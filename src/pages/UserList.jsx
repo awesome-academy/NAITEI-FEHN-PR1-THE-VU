@@ -49,9 +49,7 @@ export default function UserList() {
     const fetchUsers = async () => {
       try {
         setLoading(true);
-        const response = await fetch(
-          `http://localhost:5000/users?_sort=role`,
-        );
+        const response = await fetch(`http://localhost:5000/users?_sort=role`);
         const data = await response.json();
         setUsers(data);
         setFilteredUsers(data);

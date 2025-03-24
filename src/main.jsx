@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
-import { Provider } from 'react-redux';
-import { store } from './store';
+import { Provider } from "react-redux";
+import { store } from "./store";
 import "./index.css";
 import App from "./App.jsx";
 import ProductDetail from "./components/ProductDetail.jsx";
@@ -12,6 +12,7 @@ import RequestPlant from "./pages/RequestPlant.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 import Statistics from "./pages/Statistics.jsx";
 import UserList from "./pages/UserList.jsx";
+import OrderList from "./pages/OrderList.jsx";
 import HistoryOrder from "./pages/HistoryOrder.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -30,7 +31,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="/admin" element={<AdminDashboard />}>
             <Route index element={<Statistics />} />
             <Route path="/admin/users" element={<UserList />} />
-        </Route>
+            <Route path="/admin/orders" element={<OrderList />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </Provider>

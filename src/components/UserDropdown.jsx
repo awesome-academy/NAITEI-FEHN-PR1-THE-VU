@@ -18,7 +18,7 @@ export default function UserDropdown() {
     >
       <UserCircleIcon className="size-8" />
       {isUserDropdownOpen && (
-        <ul className="fixed top-10 right-3 rounded-lg py-1 border border-gray-200 flex flex-col items-start z-50 text-gray-500 bg-white text-sm text-left">
+        <ul className="absolute top-10 right-3 rounded-lg py-1 border border-gray-200 flex flex-col items-start z-50 text-gray-500 bg-white text-sm text-left">
           <li className="w-full px-2 py-2 hover:bg-gray-100 hover:text-main">
             <a href="/admin" className="flex items-center">
               <ChartBarIcon className="size-3 mr-1" />
@@ -44,7 +44,7 @@ export default function UserDropdown() {
             </a>
           </li>
           <li className="w-full px-2 py-2 hover:bg-gray-100 hover:text-main">
-            <a href="#" className="flex items-center">
+            <a href="/admin/orders" className="flex items-center">
               <RectangleStackIcon className="size-3 mr-1" />
               Đơn hàng
             </a>

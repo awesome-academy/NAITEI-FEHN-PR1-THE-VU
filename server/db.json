@@ -654,15 +654,15 @@
   "orders": [
     {
       "id": "1",
-      "user_id": 2,
+      "user_name": "Hà Minh Tuấn",
       "status": "đã giao",
       "trees": [
         {
-          "id": 1,
+          "name": "Phong Nhật Bản",
           "quantity": 1
         },
         {
-          "id": 3,
+          "name": "Cây Kim Tiền",
           "quantity": 2
         }
       ],
@@ -674,10 +674,11 @@
     {
       "id": "2",
       "user_id": 2,
+      "user_name": "Nguyễn Thị Lan",
       "status": "đang xử lý",
       "trees": [
         {
-          "id": 2,
+          "name": "Bonsai Sung",
           "quantity": 1
         }
       ],
@@ -688,15 +689,16 @@
     },
     {
       "id": "3",
-      "user_id": 4,
-      "status": "đã giao",
+      "user_id": 2,
+      "user_name": "Trần Văn Hùng",
+      "status": "đang hủy",
       "trees": [
         {
-          "id": 1,
+          "name": "Phong Nhật Bản",
           "quantity": 3
         },
         {
-          "id": 4,
+          "name": "Cây Hoa Sứ",
           "quantity": 1
         }
       ],
@@ -706,12 +708,13 @@
       "total": 1270000
     },
     {
-      "id": 4,
+      "id": "4",
       "user_id": 2,
-      "status": "đang xử lý",
+      "user_name": "Lê Thị Mai",
+      "status": "đã hủy",
       "trees": [
         {
-          "id": 5,
+          "name": "Cây Lộc Vừng",
           "quantity": 2
         }
       ],
@@ -721,16 +724,17 @@
       "total": 600000
     },
     {
-      "id": 5,
+      "id": "5",
       "user_id": 2,
+      "user_name": "Phạm Quốc Anh",
       "status": "đã giao",
       "trees": [
         {
-          "id": 2,
+          "name": "Bonsai Sung",
           "quantity": 1
         },
         {
-          "id": 3,
+          "name": "Cây Kim Tiền",
           "quantity": 1
         }
       ],
@@ -740,12 +744,13 @@
       "total": 430000
     },
     {
-      "id": 6,
+      "id": "6",
       "user_id": 2,
+      "user_name": "Đỗ Thị Hồng",
       "status": "đang giao",
       "trees": [
         {
-          "id": 1,
+          "name": "Phong Nhật Bản",
           "quantity": 4
         }
       ],
@@ -755,16 +760,17 @@
       "total": 1400000
     },
     {
-      "id": 7,
+      "id": "7",
       "user_id": 2,
+      "user_name": "Vũ Minh Đức",
       "status": "đã giao",
       "trees": [
         {
-          "id": 3,
+          "name": "Cây Kim Tiền",
           "quantity": 2
         },
         {
-          "id": 5,
+          "name": "Cây Lộc Vừng",
           "quantity": 1
         }
       ],
@@ -774,12 +780,13 @@
       "total": 660000
     },
     {
-      "id": 8,
+      "id": "8",
       "user_id": 2,
+      "user_name": "Hoàng Thị Ngọc",
       "status": "đang xử lý",
       "trees": [
         {
-          "id": 4,
+          "name": "Cây Hoa Sứ",
           "quantity": 3
         }
       ],
@@ -791,14 +798,15 @@
     {
       "id": "9",
       "user_id": 10,
+      "user_name": "Bùi Văn Long",
       "status": "đã giao",
       "trees": [
         {
-          "id": 2,
+          "name": "Bonsai Sung",
           "quantity": 2
         },
         {
-          "id": 1,
+          "name": "Phong Nhật Bản",
           "quantity": 1
         }
       ],
@@ -810,10 +818,11 @@
     {
       "id": "10",
       "user_id": 11,
+      "user_name": "Trương Thị Thu",
       "status": "đang xử lý",
       "trees": [
         {
-          "id": 5,
+          "name": "Cây Lộc Vừng",
           "quantity": 1
         }
       ],
@@ -825,14 +834,15 @@
     {
       "id": "11",
       "user_id": 12,
+      "user_name": "Ngô Văn Nam",
       "status": "đã giao",
       "trees": [
         {
-          "id": 3,
+          "name": "Cây Kim Tiền",
           "quantity": 3
         },
         {
-          "id": 4,
+          "name": "Cây Hoa Sứ",
           "quantity": 2
         }
       ],
@@ -844,10 +854,11 @@
     {
       "id": "12",
       "user_id": 13,
+      "user_name": "Lý Thị Hoa",
       "status": "đang xử lý",
       "trees": [
         {
-          "id": 1,
+          "name": "Phong Nhật Bản",
           "quantity": 2
         }
       ],
@@ -859,14 +870,15 @@
     {
       "id": "13",
       "user_id": 14,
+      "user_name": "Đặng Văn Khoa",
       "status": "đã giao",
       "trees": [
         {
-          "id": 2,
+          "name": "Bonsai Sung",
           "quantity": 1
         },
         {
-          "id": 5,
+          "name": "Cây Lộc Vừng",
           "quantity": 1
         }
       ],
@@ -878,10 +890,11 @@
     {
       "id": "14",
       "user_id": 15,
+      "user_name": "Phan Thị Linh",
       "status": "đang xử lý",
       "trees": [
         {
-          "id": 4,
+          "name": "Cây Hoa Sứ",
           "quantity": 2
         }
       ],
@@ -893,14 +906,15 @@
     {
       "id": "15",
       "user_id": 16,
+      "user_name": "Tô Văn Bình",
       "status": "đã giao",
       "trees": [
         {
-          "id": 1,
+          "name": "Phong Nhật Bản",
           "quantity": 1
         },
         {
-          "id": 3,
+          "name": "Cây Kim Tiền",
           "quantity": 1
         }
       ],
@@ -912,10 +926,11 @@
     {
       "id": "16",
       "user_id": 17,
+      "user_name": "Hồ Thị Yến",
       "status": "đang xử lý",
       "trees": [
         {
-          "id": 2,
+          "name": "Bonsai Sung",
           "quantity": 3
         }
       ],
@@ -927,14 +942,15 @@
     {
       "id": "17",
       "user_id": 18,
+      "user_name": "Mai Văn Phong",
       "status": "đã giao",
       "trees": [
         {
-          "id": 5,
+          "name": "Cây Lộc Vừng",
           "quantity": 2
         },
         {
-          "id": 4,
+          "name": "Cây Hoa Sứ",
           "quantity": 1
         }
       ],
