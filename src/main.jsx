@@ -11,6 +11,7 @@ import ProductList from "./pages/ProductList.jsx";
 import RequestPlant from "./pages/RequestPlant.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 import Statistics from "./pages/Statistics.jsx";
+import UserList from "./pages/UserList.jsx";
 import HistoryOrder from "./pages/HistoryOrder.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -20,15 +21,16 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<Dashboard />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/login" element={<h1>Login</h1>} />
+            <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/products" element={<ProductList />} />
             <Route path="/request-plant" element={<RequestPlant />} />
-            <Route path="/order-history" element={<HistoryOrder />} /> 
+            <Route path="/order-history" element={<HistoryOrder />} />
           </Route>
           <Route path="/admin" element={<AdminDashboard />}>
             <Route index element={<Statistics />} />
-          </Route>
+            <Route path="/admin/users" element={<UserList />} />
+        </Route>
         </Routes>
       </BrowserRouter>
     </Provider>

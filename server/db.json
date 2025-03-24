@@ -2,27 +2,33 @@
   "users": [
     {
       "id": "1",
+      "name": "Admin",
       "email": "admin@example.com",
       "phone": "+8412345678",
       "social_link": "https://www.facebook.com/SAFT.H503",
       "password": "password",
-      "role": "quản trị viên"
+      "role": "admin",
+      "is_active": true
     },
     {
       "id": "2",
+      "name": "User 1",
       "email": "user1@example.com",
       "phone": "+8423456789",
       "social_link": "https://www.facebook.com/ltl.1506/",
       "password": "password",
-      "role": "người dùng"
+      "role": "user",
+      "is_active": false
     },
     {
       "id": "3",
       "email": "user2@example.com",
+      "name": "User 2",
       "phone": "+8434567890",
       "social_link": "https://www.facebook.com/profile.php?id=100072532142749",
       "password": "password",
-      "role": "người dùng"
+      "role": "user",
+      "is_active": false
     }
   ],
   "trees": [
@@ -681,9 +687,9 @@
       "total": 250000
     },
     {
-      "id": 3,
-      "user_id": 2,
-      "status": "đã hủy",
+      "id": "3",
+      "user_id": 4,
+      "status": "đã giao",
       "trees": [
         {
           "id": 1,
@@ -783,7 +789,7 @@
       "total": 660000
     },
     {
-      "id": 9,
+      "id": "9",
       "user_id": 10,
       "status": "đã giao",
       "trees": [
@@ -802,7 +808,7 @@
       "total": 850000
     },
     {
-      "id": 10,
+      "id": "10",
       "user_id": 11,
       "status": "đang xử lý",
       "trees": [
@@ -817,7 +823,7 @@
       "total": 300000
     },
     {
-      "id": 11,
+      "id": "11",
       "user_id": 12,
       "status": "đã giao",
       "trees": [
@@ -836,7 +842,7 @@
       "total": 980000
     },
     {
-      "id": 12,
+      "id": "12",
       "user_id": 13,
       "status": "đang xử lý",
       "trees": [
@@ -851,7 +857,7 @@
       "total": 700000
     },
     {
-      "id": 13,
+      "id": "13",
       "user_id": 14,
       "status": "đã giao",
       "trees": [
@@ -870,7 +876,7 @@
       "total": 550000
     },
     {
-      "id": 14,
+      "id": "14",
       "user_id": 15,
       "status": "đang xử lý",
       "trees": [
@@ -885,7 +891,7 @@
       "total": 440000
     },
     {
-      "id": 15,
+      "id": "15",
       "user_id": 16,
       "status": "đã giao",
       "trees": [
@@ -904,7 +910,7 @@
       "total": 530000
     },
     {
-      "id": 16,
+      "id": "16",
       "user_id": 17,
       "status": "đang xử lý",
       "trees": [
@@ -919,7 +925,7 @@
       "total": 750000
     },
     {
-      "id": 17,
+      "id": "17",
       "user_id": 18,
       "status": "đã giao",
       "trees": [
