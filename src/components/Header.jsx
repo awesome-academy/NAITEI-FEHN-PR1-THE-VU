@@ -14,8 +14,14 @@ import FacebookIcon from "../icons/FacebookIcon";
 import TiktokIcon from "../icons/TiktokIcon";
 import XIcon from "../icons/XIcon";
 import Logo from "../assets/logo.png";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+import { setSearchQuery } from "../store/productSlice";
 
 export default function Header() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
   const [isMobileHeaderDisplayed, setIsMobileHeaderDisplayed] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -30,6 +36,15 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      dispatch(setSearchQuery(searchTerm));
+      navigate("/products");
+    }
+  };
+
 
   return (
     <header>
@@ -87,7 +102,7 @@ export default function Header() {
               </p>
 
               <div className="flex items-center font-normal">
-                <form className="max-w-lg mx-auto">
+                <form className="max-w-lg mx-auto" onSubmit={handleSearch}>
                   <div className="flex">
                     <div className="relative w-full">
                       <input
@@ -95,7 +110,8 @@ export default function Header() {
                         id="search-dropdown"
                         className="block p-2 md:p-2.5 w-36 md:w-56 lg:w-96 text-sm text-gray-900 bg-gray-50 rounded-full border-s-2 border border-gray-300"
                         placeholder="Tìm kiếm..."
-                        required
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
                       />
                       <button
                         type="submit"
@@ -131,8 +147,8 @@ export default function Header() {
               <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#">GIỚI THIỆU</a>
               </li>
-              <li className="py-2.5 px-4 hover:bg-hover">
-                <a href="#" className="flex items-center">
+              <li className="py-2.5 px-4 hover:bg-[#36A66D]">
+                <a href="/products" className="flex items-center">
                   SẢN PHẨM
                   <span>
                     <ChevronDownIcon className="size-4 ml-1" />
@@ -182,11 +198,20 @@ export default function Header() {
           </div>
           {isSearching && (
             <div className="col-span-6 p-2.5 flex justify-center items-center">
-              <input
-                type="text"
-                placeholder="Tìm kiếm..."
-                className="rounded-full w-full bg-white py-1.5 text-gray-700 px-3"
-              />
+              <form onSubmit={(e) => {
+                e.preventDefault();
+                dispatch(setSearchQuery(searchTerm));
+                navigate("/products");
+                setIsSearching(false);
+              }}>
+                <input
+                  type="text"
+                  placeholder="Tìm kiếm..."
+                  className="rounded-full w-full bg-white py-1.5 text-gray-700 px-3"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </form>
             </div>
           )}
           <div className="col-span-1 col-end-9 flex justify-end items-center p-2.5">
@@ -221,7 +246,7 @@ export default function Header() {
                 </a>
               </li>
               <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
-                <a href="#" className="flex items-center">
+                <a href="/products" className="flex items-center">
                   SẢN PHẨM
                   <span>
                     <ChevronDownIcon className="size-4 ml-1" />

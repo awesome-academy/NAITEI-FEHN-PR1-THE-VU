@@ -19,14 +19,14 @@ export default function Dashboard() {
     const fetchData = async () => {
       try {
         const outstandingProductsAPI =
-          "http://localhost:3000/trees?_sort=-average_rating&_limit=6";
+          "http://localhost:5000/trees?_sort=-average_rating&_limit=6";
         const bestSellerProductAPI =
-          "http://localhost:3000/trees?_sort=-bought&_limit=6";
+          "http://localhost:5000/trees?_sort=-bought&_limit=6";
         const newProductsAPI =
-          "http://localhost:3000/trees?_sort=-created_at&_limit=8";
+          "http://localhost:5000/trees?_sort=-created_at&_limit=8";
         const discountProductsAPI =
-          "http://localhost:3000/trees?is_new=false&_limit=6";
-        const newsAPI = "http://localhost:3000/news?_sort=-created_at&_limit=3";
+          "http://localhost:5000/trees?is_new=false&_limit=6";
+        const newsAPI = "http://localhost:5000/news?_sort=-created_at&_limit=3";
 
         const [
           outstandingProducts,
