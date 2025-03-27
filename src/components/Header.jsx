@@ -126,7 +126,7 @@ export default function Header() {
           </div> */}
             <ul className="flex items-start text-xs md:text-sm text-left font-normal">
               <li className="py-2.5 px-4 hover:bg-hover text-white">
-                <a href="#">TRANG CHỦ</a>
+                <a href="/">TRANG CHỦ</a>
               </li>
               <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#">GIỚI THIỆU</a>
@@ -161,7 +161,11 @@ export default function Header() {
       {/* Mobile layout */}
       <div id="mobile-header">
         <div id="header-image">
-          <img src={Logo} alt="logo" className="w-full sm:hidden" />
+          <img
+            src={Logo}
+            alt="logo"
+            className={`w-full sm:hidden ${isSticky ? "mb-28" : ""}`}
+          />
         </div>
         <div
           className={`sm:hidden grid grid-cols-8 bg-main text-white h-[70px] z-50 transition-all duration-300 ${isSticky ? "fixed top-0 w-full shadow-lg" : ""}`}

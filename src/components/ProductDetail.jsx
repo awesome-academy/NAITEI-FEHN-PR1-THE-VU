@@ -1,34 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { 
-  StarIcon, MagnifyingGlassIcon, ChevronLeftIcon, ChevronRightIcon 
-} from '@heroicons/react/24/solid';
-import { HeartIcon } from '@heroicons/react/24/outline';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import {
+  StarIcon,
+  MagnifyingGlassIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/solid";
+import { HeartIcon } from "@heroicons/react/24/outline";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState('info');
-  const [mainImage, setMainImage] = useState('/api/placeholder/400/400');
+  const [activeTab, setActiveTab] = useState("info");
+  const [mainImage, setMainImage] = useState("/api/placeholder/400/400");
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { id } = useParams(); 
+  const { id } = useParams();
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const response = await fetch('../../server/db.json');
+        const response = await fetch("../../server/db.json");
         if (!response.ok) {
-          throw new Error('Không thể tải dữ liệu sản phẩm');
+          throw new Error("Không thể tải dữ liệu sản phẩm");
         }
         const data = await response.json();
-        
-        const foundProduct = data.trees.find(item => item.id === parseInt(id));
+
+        const foundProduct = data.trees.find(
+          (item) => item.id === parseInt(id),
+        );
         if (foundProduct) {
           setProduct(foundProduct);
           setMainImage(foundProduct.image[0]);
         } else {
-          setError('Không tìm thấy sản phẩm');
+          setError("Không tìm thấy sản phẩm");
         }
       } catch (err) {
         setError(err.message);
@@ -41,10 +46,10 @@ export default function ProductDetail() {
   }, [id]);
 
   const handleQuantityChange = (type) => {
-    if (type === 'increase') {
-      setQuantity(prev => prev + 1);
-    } else if (type === 'decrease' && quantity > 1) {
-      setQuantity(prev => prev - 1);
+    if (type === "increase") {
+      setQuantity((prev) => prev + 1);
+    } else if (type === "decrease" && quantity > 1) {
+      setQuantity((prev) => prev - 1);
     }
   };
 
@@ -56,9 +61,9 @@ export default function ProductDetail() {
   };
 
   const renderStars = (count) => {
-    return Array(count).fill(0).map((_, index) => (
-      <StarIcon key={index} className="h-4 w-4" />
-    ));
+    return Array(count)
+      .fill(0)
+      .map((_, index) => <StarIcon key={index} className="h-4 w-4" />);
   };
 
   if (loading) {
@@ -82,12 +87,16 @@ export default function ProductDetail() {
           </div>
           <div className="flex space-x-2 overflow-x-auto">
             {product.image.map((thumb, index) => (
-              <div 
+              <div
                 key={index}
                 className="border p-2 w-20 h-20 cursor-pointer"
                 onClick={() => setMainImage(thumb)}
               >
-                <img src={thumb} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
+                <img
+                  src={thumb}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>
@@ -101,8 +110,12 @@ export default function ProductDetail() {
           </div>
 
           <div className="mb-4">
-            <span className="text-red-500 text-xl font-bold">₫ {product.price.toLocaleString()}</span>
-            <span className="text-gray-500 line-through ml-2">₫ {product.old_price.toLocaleString()}</span>
+            <span className="text-red-500 text-xl font-bold">
+              ₫ {product.price.toLocaleString()}
+            </span>
+            <span className="text-gray-500 line-through ml-2">
+              ₫ {product.old_price.toLocaleString()}
+            </span>
           </div>
 
           <div className="text-gray-700 mb-4">
@@ -112,21 +125,21 @@ export default function ProductDetail() {
           <div className="flex items-center mb-4">
             <label className="mr-2">Số lượng:</label>
             <div className="flex border">
-              <button 
+              <button
                 className="px-3 py-1 bg-gray-100 border-r"
-                onClick={() => handleQuantityChange('decrease')}
+                onClick={() => handleQuantityChange("decrease")}
               >
                 -
               </button>
-              <input 
-                type="text" 
-                value={quantity} 
+              <input
+                type="text"
+                value={quantity}
                 onChange={handleInputChange}
                 className="w-12 text-center py-1"
               />
-              <button 
+              <button
                 className="px-3 py-1 bg-gray-100 border-l"
-                onClick={() => handleQuantityChange('increase')}
+                onClick={() => handleQuantityChange("increase")}
               >
                 +
               </button>
@@ -146,16 +159,28 @@ export default function ProductDetail() {
           </div>
 
           <div className="flex items-center space-x-2">
-            <a href="#" className="bg-blue-600 text-white px-2 py-1 text-xs rounded flex items-center">
+            <a
+              href="#"
+              className="bg-blue-600 text-white px-2 py-1 text-xs rounded flex items-center"
+            >
               <span className="mr-1">F</span> Share
             </a>
-            <a href="#" className="bg-blue-400 text-white px-2 py-1 text-xs rounded flex items-center">
+            <a
+              href="#"
+              className="bg-blue-400 text-white px-2 py-1 text-xs rounded flex items-center"
+            >
               <span className="mr-1">T</span> Tweet
             </a>
-            <a href="#" className="bg-red-600 text-white px-2 py-1 text-xs rounded flex items-center">
+            <a
+              href="#"
+              className="bg-red-600 text-white px-2 py-1 text-xs rounded flex items-center"
+            >
               <span className="mr-1">P</span> Pin
             </a>
-            <a href="#" className="bg-orange-500 text-white px-2 py-1 text-xs rounded flex items-center">
+            <a
+              href="#"
+              className="bg-orange-500 text-white px-2 py-1 text-xs rounded flex items-center"
+            >
               <span className="mr-1">R</span> Reddit
             </a>
           </div>
@@ -164,61 +189,75 @@ export default function ProductDetail() {
 
       <div className="mt-8 border-t pt-6">
         <div className="flex border-b">
-          <button 
-            className={`px-4 py-2 ${activeTab === 'info' ? 'border-b-2 border-green-500 text-green-500 font-medium' : 'text-gray-500'}`}
-            onClick={() => setActiveTab('info')}
+          <button
+            className={`px-4 py-2 ${activeTab === "info" ? "border-b-2 border-green-500 text-green-500 font-medium" : "text-gray-500"}`}
+            onClick={() => setActiveTab("info")}
           >
             THÔNG TIN SẢN PHẨM
           </button>
-          <button 
-            className={`px-4 py-2 ${activeTab === 'reviews' ? 'border-b-2 border-green-500 text-green-500 font-medium' : 'text-gray-500'}`}
-            onClick={() => setActiveTab('reviews')}
+          <button
+            className={`px-4 py-2 ${activeTab === "reviews" ? "border-b-2 border-green-500 text-green-500 font-medium" : "text-gray-500"}`}
+            onClick={() => setActiveTab("reviews")}
           >
             KHÁCH HÀNG ĐÁNH GIÁ
           </button>
-          <button 
-            className={`px-4 py-2 ${activeTab === 'tags' ? 'border-b-2 border-green-500 text-green-500 font-medium' : 'text-gray-500'}`}
-            onClick={() => setActiveTab('tags')}
+          <button
+            className={`px-4 py-2 ${activeTab === "tags" ? "border-b-2 border-green-500 text-green-500 font-medium" : "text-gray-500"}`}
+            onClick={() => setActiveTab("tags")}
           >
             THẺ - TAG
           </button>
         </div>
 
-        {activeTab === 'info' && (
+        {activeTab === "info" && (
           <div className="py-4">
             <div className="space-y-3 text-gray-700">
-              <p><strong>Tên khoa học:</strong> {product.science_name}</p>
-              <p><strong>Họ thực vật:</strong> {product.information.family}</p>
-              <p><strong>Chiều cao:</strong> {product.information.height}</p>
+              <p>
+                <strong>Tên khoa học:</strong> {product.science_name}
+              </p>
+              <p>
+                <strong>Họ thực vật:</strong> {product.information.family}
+              </p>
+              <p>
+                <strong>Chiều cao:</strong> {product.information.height}
+              </p>
               <p>{product.information.full_description}</p>
             </div>
           </div>
         )}
 
-        {activeTab === 'reviews' && (
+        {activeTab === "reviews" && (
           <div className="py-4">
             {product.ratings.length > 0 ? (
               product.ratings.map((review, index) => (
                 <div key={index} className="mb-4">
-                  <p><strong>{review.username || review.user_id}</strong></p>
-                  <div className="flex text-yellow-400">{renderStars(review.rating)}</div>
+                  <p>
+                    <strong>{review.username || review.user_id}</strong>
+                  </p>
+                  <div className="flex text-yellow-400">
+                    {renderStars(review.rating)}
+                  </div>
                   <p>{review.content}</p>
-                  <p className="text-gray-500 text-sm">{new Date(review.created_at).toLocaleString()}</p>
+                  <p className="text-gray-500 text-sm">
+                    {new Date(review.created_at).toLocaleString()}
+                  </p>
                 </div>
               ))
             ) : (
-              <p className="text-center text-gray-500">Chưa có đánh giá nào cho sản phẩm này.</p>
+              <p className="text-center text-gray-500">
+                Chưa có đánh giá nào cho sản phẩm này.
+              </p>
             )}
           </div>
         )}
 
-        {activeTab === 'tags' && (
+        {activeTab === "tags" && (
           <div className="py-4">
             <div className="flex flex-wrap gap-2">
               {product.tags.map((tag, index) => (
-                <a 
+                <a
                   key={index}
-                  href="#" 
+                  href="#"
                   className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700 hover:bg-gray-200"
                 >
                   {tag}
