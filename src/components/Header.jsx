@@ -17,6 +17,7 @@ import Logo from "../assets/logo.png";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { setSearchQuery } from "../store/productSlice";
+import NotificationDropdown from './NotificationDropdown';
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -130,6 +131,9 @@ export default function Header() {
                   <ShoppingCartIcon className="size-4 md:size-6 mr-1" />
                   <span className="text-sm">0 Sản phẩm</span>
                 </a>
+                <div className="ml-4">
+                  <NotificationDropdown />
+                </div>
               </div>
             </div>
           </div>
@@ -162,6 +166,9 @@ export default function Header() {
                     <ChevronDownIcon className="size-4 ml-1" />
                   </span>
                 </a>
+              </li>
+              <li className="py-2.5 px-4 hover:bg-hover">
+                <a href="/request-plant">ĐỀ XUẤT SẢN PHẨM</a>
               </li>
               <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#">TIN TỨC</a>
@@ -227,6 +234,9 @@ export default function Header() {
                   onClick={() => setIsSearching(true)}
                 />
               )}
+              <div className="mr-3">
+                <NotificationDropdown />
+              </div>
               <a href="#" className="cursor-pointer hover:opacity-70">
                 <ShoppingCartIcon className="size-6" />
               </a>
@@ -256,6 +266,14 @@ export default function Header() {
               <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
                 <a href="#" className="flex items-center">
                   SẢN PHẨM MỚI
+                  <span>
+                    <ChevronDownIcon className="size-4 ml-1" />
+                  </span>
+                </a>
+              </li>
+              <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
+                <a href="/request-plant" className="flex items-center">
+                  ĐỀ XUẤT SẢN PHẨM
                   <span>
                     <ChevronDownIcon className="size-4 ml-1" />
                   </span>
