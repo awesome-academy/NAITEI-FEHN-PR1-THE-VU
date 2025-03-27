@@ -13,9 +13,13 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@reduxjs/toolkit": "^2.6.1",
     "@tailwindcss/vite": "^4.0.13",
+    "antd": "^5.24.4",
+    "axios": "^1.8.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
     "react-router": "^7.3.0",
     "react-router-dom": "^7.4.0",
     "tailwindcss": "^4.0.13"
@@ -29,7 +33,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-    "json-server": "^1.0.0-beta.3",
+    "json-server": "^0.17.4",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "vite": "^6.2.0"
