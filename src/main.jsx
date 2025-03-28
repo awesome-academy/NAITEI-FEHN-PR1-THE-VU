@@ -6,6 +6,7 @@ import { store } from "./store";
 import "./index.css";
 import App from "./App.jsx";
 import ProductDetail from "./components/ProductDetail.jsx";
+import GreenShopCart from "./components/GreenShopCart.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import ProductList from "./pages/ProductList.jsx";
 import RequestPlant from "./pages/RequestPlant.jsx";
@@ -24,6 +25,7 @@ createRoot(document.getElementById("root")).render(
             <Route index element={<Dashboard />} />
             <Route path="/login" element={<h1>Login</h1>} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<GreenShopCart />} />
             <Route path="/products" element={<ProductList />} />
             <Route path="/request-plant" element={<RequestPlant />} />
             <Route path="/order-history" element={<HistoryOrder />} />
