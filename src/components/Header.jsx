@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Bars3Icon,
   ChevronDownIcon,
@@ -26,6 +26,9 @@ export default function Header() {
   const [isMobileHeaderDisplayed, setIsMobileHeaderDisplayed] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const userMenuRef = useRef(null);
+  const userMobileMenuRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +41,23 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+        setIsUserMenuOpen(false);
+      }
+    }
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  
+  const toggleUserMenu = () => {
+    setIsUserMenuOpen(!isUserMenuOpen);
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
@@ -45,7 +65,6 @@ export default function Header() {
       navigate("/products");
     }
   };
-
 
   return (
     <header>
@@ -88,12 +107,43 @@ export default function Header() {
               <UserPlusIcon className="size-4 mr-1" />
               <span>Đăng ký</span>
             </a>
+
+            <div className="hidden sm:block relative" ref={userMenuRef}>
+              <button
+                className="flex justify-center items-center p-2.5 hover:text-white"
+                onClick={toggleUserMenu}
+              >
+                Xin chào, Nguyễn Văn A!
+                <div className="w-6 h-6 rounded-full ml-2 bg-gray-600 flex items-center justify-center">
+                  <UserIcon className="size-4" />
+                </div>
+              </button>
+              
+              {isUserMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                  <div className="py-1">
+                    <a 
+                      href="/order-history" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Lịch sử mua hàng
+                    </a>
+                    <a 
+                      href="/logout" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Đăng xuất
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
         <div className="bg-[#F2F2F2]">
           <div className="flex justify-between items-center text-gray-700 text-sm max-w-5xl m-auto">
-            <img src={Logo} alt="logo" className="min-h-[50px] lg:mr-20" />
+            <img src={Logo} alt="logo" className="min-h-[50px] lg:mr-10" />
             <div className="p-2.5">
               <p className="flex justify-start items-center ml-2.5 mb-2 font-normal">
                 <PhoneIcon className="size-3 lg:size-4 mr-1" />
@@ -240,6 +290,35 @@ export default function Header() {
               <a href="#" className="cursor-pointer hover:opacity-70">
                 <ShoppingCartIcon className="size-6" />
               </a>
+              <div className="sm:hidden relative" ref={userMobileMenuRef}>
+                <button
+                  className="flex justify-center items-center p-2.5 hover:text-white"
+                  onClick={toggleUserMenu}
+                >
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center">
+                    <UserIcon className="size-6" />
+                  </div>
+                </button>
+                
+                {isUserMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                    <div className="py-1">
+                      <a 
+                        href="/order-history" 
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Lịch sử mua hàng
+                      </a>
+                      <a 
+                        href="/logout" 
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Đăng xuất
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
