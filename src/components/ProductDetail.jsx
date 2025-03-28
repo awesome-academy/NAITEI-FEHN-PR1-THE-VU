@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import {
-  StarIcon,
-  MagnifyingGlassIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "@heroicons/react/24/solid";
-import { HeartIcon } from "@heroicons/react/24/outline";
+  StarIcon, MagnifyingGlassIcon, ChevronLeftIcon, ChevronRightIcon
+} from '@heroicons/react/24/solid';
+import { HeartIcon } from '@heroicons/react/24/outline';
+import ReviewForm from './ReviewForm';
+import axios from "axios";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
@@ -20,23 +19,12 @@ export default function ProductDetail() {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const response = await fetch("../../server/db.json");
-        if (!response.ok) {
-          throw new Error("Không thể tải dữ liệu sản phẩm");
-        }
-        const data = await response.json();
-
-        const foundProduct = data.trees.find(
-          (item) => item.id === parseInt(id),
-        );
-        if (foundProduct) {
-          setProduct(foundProduct);
-          setMainImage(foundProduct.image[0]);
-        } else {
-          setError("Không tìm thấy sản phẩm");
-        }
+        const response = await axios.get(`http://localhost:5000/trees/${id}`);
+        setProduct(response.data);
+        setMainImage(response.data.image[0]);
       } catch (err) {
-        setError(err.message);
+        setError("Không tìm thấy sản phẩm");
+        console.error(err);
       } finally {
         setLoading(false);
       }
@@ -45,11 +33,23 @@ export default function ProductDetail() {
     fetchProduct();
   }, [id]);
 
-  const handleQuantityChange = (type) => {
-    if (type === "increase") {
-      setQuantity((prev) => prev + 1);
-    } else if (type === "decrease" && quantity > 1) {
-      setQuantity((prev) => prev - 1);
+
+
+  const handleSubmitReview = async (newReview) => {
+    if (!product) return;
+  
+    const updatedRatings = [newReview, ...product.ratings];
+  
+    setProduct({ ...product, ratings: updatedRatings });
+    setActiveTab("reviews");
+  
+    try {
+      await axios.patch(`http://localhost:5000/trees/${product.id}`, {
+        ratings: updatedRatings,
+      });
+      console.log("Cập nhật rating thành công!");
+    } catch (error) {
+      console.error("Lỗi khi cập nhật rating:", error);
     }
   };
 
@@ -57,6 +57,14 @@ export default function ProductDetail() {
     const value = parseInt(e.target.value);
     if (!isNaN(value) && value > 0) {
       setQuantity(value);
+    }
+  };
+
+  const handleQuantityChange = (type) => {
+    if (type === 'increase') {
+      setQuantity(prev => prev + 1);
+    } else if (type === 'decrease' && quantity > 1) {
+      setQuantity(prev => prev - 1);
     }
   };
 
@@ -190,20 +198,20 @@ export default function ProductDetail() {
       <div className="mt-8 border-t pt-6">
         <div className="flex border-b">
           <button
-            className={`px-4 py-2 ${activeTab === "info" ? "border-b-2 border-green-500 text-green-500 font-medium" : "text-gray-500"}`}
-            onClick={() => setActiveTab("info")}
+            className={`px-4 py-2 ${activeTab === 'info' ? 'border-b-2 border-green-500 text-green-500 font-medium' : 'text-gray-500'}`}
+            onClick={() => setActiveTab('info')}
           >
             THÔNG TIN SẢN PHẨM
           </button>
           <button
-            className={`px-4 py-2 ${activeTab === "reviews" ? "border-b-2 border-green-500 text-green-500 font-medium" : "text-gray-500"}`}
-            onClick={() => setActiveTab("reviews")}
+            className={`px-4 py-2 ${activeTab === 'reviews' ? 'border-b-2 border-green-500 text-green-500 font-medium' : 'text-gray-500'}`}
+            onClick={() => setActiveTab('reviews')}
           >
             KHÁCH HÀNG ĐÁNH GIÁ
           </button>
           <button
-            className={`px-4 py-2 ${activeTab === "tags" ? "border-b-2 border-green-500 text-green-500 font-medium" : "text-gray-500"}`}
-            onClick={() => setActiveTab("tags")}
+            className={`px-4 py-2 ${activeTab === 'tags' ? 'border-b-2 border-green-500 text-green-500 font-medium' : 'text-gray-500'}`}
+            onClick={() => setActiveTab('tags')}
           >
             THẺ - TAG
           </button>
@@ -228,15 +236,16 @@ export default function ProductDetail() {
 
         {activeTab === "reviews" && (
           <div className="py-4">
+            <ReviewForm
+              productId={product.id}
+              onSubmitReview={handleSubmitReview}
+            />
+
             {product.ratings.length > 0 ? (
               product.ratings.map((review, index) => (
-                <div key={index} className="mb-4">
-                  <p>
-                    <strong>{review.username || review.user_id}</strong>
-                  </p>
-                  <div className="flex text-yellow-400">
-                    {renderStars(review.rating)}
-                  </div>
+                <div key={index} className="mb-4 border-b pb-4">
+                  <p><strong>{review.username || review.user_id}</strong></p>
+                  <div className="flex text-yellow-400">{renderStars(review.rating)}</div>
                   <p>{review.content}</p>
                   <p className="text-gray-500 text-sm">
                     {new Date(review.created_at).toLocaleString()}

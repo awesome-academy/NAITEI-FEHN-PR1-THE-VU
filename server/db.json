@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "admin@example.com",
       "phone": "+8412345678",
       "social_link": "https://www.facebook.com/SAFT.H503",
@@ -9,7 +9,7 @@
       "role": "quản trị viên"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "user1@example.com",
       "phone": "+8423456789",
       "social_link": "https://www.facebook.com/ltl.1506/",
@@ -17,7 +17,7 @@
       "role": "người dùng"
     },
     {
-      "id": 3,
+      "id": "3",
       "email": "user2@example.com",
       "phone": "+8434567890",
       "social_link": "https://www.facebook.com/profile.php?id=100072532142749",
@@ -27,10 +27,38 @@
   ],
   "trees": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Phong Nhật Bản",
       "science_name": "Acer palmatum",
       "ratings": [
+        {
+          "productId": "1",
+          "username": "cuvevip",
+          "rating": 5,
+          "content": "Velit commodi nisi ",
+          "created_at": "2025-03-27T04:00:47.371Z"
+        },
+        {
+          "productId": "1",
+          "username": "cajebaqa",
+          "rating": 5,
+          "content": "Esse ipsa impedit",
+          "created_at": "2025-03-27T03:42:05.264Z"
+        },
+        {
+          "productId": "1",
+          "username": "qunuzapy",
+          "rating": 4,
+          "content": "Proident dicta in e",
+          "created_at": "2025-03-27T03:42:00.919Z"
+        },
+        {
+          "productId": "1",
+          "username": "zuluzoxa",
+          "rating": 5,
+          "content": "Deleniti aliqua Opt",
+          "created_at": "2025-03-27T03:40:55.973Z"
+        },
         {
           "username": "user1@example.com",
           "rating": 5,
@@ -38,49 +66,61 @@
           "created_at": "2023-10-15T09:00:00Z"
         },
         {
-          "user_id": "user2@example.com",
+          "username": "user2@example.com",
           "rating": 5,
           "content": "Cây khỏe mạnh, được giao trong tình trạng tuyệt vời",
           "created_at": "2023-10-16T14:30:00Z"
         }
       ],
-      "average_rating": 5,
       "price": 350000,
       "old_price": 400000,
-      "bought": 0,
       "category": 1,
       "color": "Đỏ",
       "description": "Một loại cây rụng lá nhỏ với lá hình bàn tay rộng, chuyển sang màu đỏ rực vào mùa thu.",
       "information": {
         "family": "Sapindaceae",
         "height": "4.5-7.5 mét",
-        "full_description": "Cây Phong Nhật Bản nổi tiếng với màu sắc tuyệt đẹp và hình dáng thanh lịch. Chúng thích hợp trồng ở nơi có bóng râm một phần và đất thoát nước tốt. Cây thường cao từ 4Diego5 đến 7.5 mét với tán rộng 4.5-6 mét. Loại này có lá đỏ cắt sâu, chuyển sang màu đỏ thắm rực rỡ vào mùa thu. Đây là lựa chọn hoàn hảo làm điểm nhấn trong vườn hoặc sân hiên, tạo nên một bóng dáng ấn tượng với kiểu phân nhánh tầng lớp. Cần tưới nước vừa phải và bảo vệ khỏi gió mạnh."
+        "full_description": "Cây Phong Nhật Bản nổi tiếng với màu sắc tuyệt đẹp và hình dáng thanh lịch. Chúng thích hợp trồng ở nơi có bóng râm một phần và đất thoát nước tốt. Cây thường cao từ 4.5 đến 7.5 mét với tán rộng 4.5-6 mét. Loại này có lá đỏ cắt sâu, chuyển sang màu đỏ thắm rực rỡ vào mùa thu. Đây là lựa chọn hoàn hảo làm điểm nhấn trong vườn hoặc sân hiên, tạo nên một bóng dáng ấn tượng với kiểu phân nhánh tầng lớp. Cần tưới nước vừa phải và bảo vệ khỏi gió mạnh."
       },
       "image": [
         "/images/spx2-1.png",
         "/images/spx2-2.png",
         "/images/spx2-3.png"
       ],
-      "tags": ["Rụng lá", "Cây cảnh", "Bóng râm"],
-      "is_new": true,
-      "created_at": "2023-08-12T03:45:00Z"
+      "tags": [
+        "Rụng lá",
+        "Cây cảnh",
+        "Bóng râm"
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Bonsai Sung",
       "science_name": "Ficus retusa",
       "ratings": [
         {
-          "user_id": "user1@example.com",
+          "productId": "2",
+          "username": "qajizo",
+          "rating": 5,
+          "content": "Numquam et quis null",
+          "created_at": "2025-03-27T03:42:21.174Z"
+        },
+        {
+          "productId": "2",
+          "username": "qativa",
+          "rating": 3,
+          "content": "Reprehenderit natus",
+          "created_at": "2025-03-27T03:42:17.616Z"
+        },
+        {
+          "username": "user1@example.com",
           "rating": 5,
           "content": "Hoàn hảo cho bàn làm việc của tôi, rất thích!",
           "created_at": "2023-09-20T10:15:00Z"
         }
       ],
-      "average_rating": 5,
       "price": 250000,
       "old_price": 300000,
-      "bought": 0,
       "category": 2,
       "color": "Xanh lá",
       "description": "Một loại cây bonsai trong nhà phổ biến với lá xanh bóng nhỏ và thân xoắn hấp dẫn.",
@@ -94,19 +134,19 @@
         "/images/spx2-3.png",
         "/images/spx2-4.png"
       ],
-      "tags": ["Bonsai", "Trong nhà", "Ít bảo trì"],
-      "is_new": false,
-      "created_at": "2023-07-05T14:20:00Z"
+      "tags": [
+        "Bonsai",
+        "Trong nhà",
+        "Ít bảo trì"
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Cây Kim Tiền",
       "science_name": "Pachira aquatica",
       "ratings": [],
-      "average_rating": -1,
       "price": 180000,
       "old_price": 200000,
-      "bought": 0,
       "category": 3,
       "color": "Xanh lá",
       "description": "Một loại cây trong nhà phổ biến với thân bện và lá giống lá cọ, được tin là mang lại may mắn và thịnh vượng.",
@@ -120,19 +160,19 @@
         "/images/spx2-4.png",
         "/images/spx2-5.png"
       ],
-      "tags": ["Trong nhà", "Phong thủy", "Lọc không khí"],
-      "is_new": true,
-      "created_at": "2021-11-23T08:15:00Z"
+      "tags": [
+        "Trong nhà",
+        "Phong thủy",
+        "Lọc không khí"
+      ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Cây Hoa Sứ",
       "science_name": "Plumeria rubra",
       "ratings": [],
-      "average_rating": -1,
       "price": 220000,
       "old_price": 260000,
-      "bought": 0,
       "category": 5,
       "color": "Hồng",
       "description": "Cây hoa nhiệt đới với hoa thơm ngát, thường được trồng làm cảnh trong vườn.",
@@ -146,19 +186,19 @@
         "/images/spx2-5.png",
         "/images/spx2-6.png"
       ],
-      "tags": ["Hoa", "Nhiệt đới", "Cây cảnh"],
-      "is_new": false,
-      "created_at": "2020-06-17T19:30:00Z"
+      "tags": [
+        "Hoa",
+        "Nhiệt đới",
+        "Cây cảnh"
+      ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Cây Lộc Vừng",
       "science_name": "Barringtonia acutangula",
       "ratings": [],
-      "average_rating": -1,
       "price": 300000,
       "old_price": 350000,
-      "bought": 0,
       "category": 5,
       "color": "Đỏ",
       "description": "Cây bóng mát với hoa đỏ rủ dài, thường trồng ven đường hoặc trong sân vườn lớn.",
@@ -172,19 +212,19 @@
         "/images/spx2-6.png",
         "/images/spx2-7.png"
       ],
-      "tags": ["Bóng mát", "Hoa", "Cây bản địa"],
-      "is_new": true,
-      "created_at": "2024-02-09T11:25:00Z"
+      "tags": [
+        "Bóng mát",
+        "Hoa",
+        "Cây bản địa"
+      ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Cây Đa Búp Đỏ",
       "science_name": "Ficus elastica",
       "ratings": [],
-      "average_rating": -1,
       "price": 200000,
       "old_price": 250000,
-      "bought": 0,
       "category": 3,
       "color": "Xanh lá - Đỏ",
       "description": "Cây trong nhà với lá to bóng, búp non màu đỏ nổi bật, dễ chăm sóc.",
@@ -198,19 +238,19 @@
         "/images/spx2-7.png",
         "/images/spx2-8.png"
       ],
-      "tags": ["Trong nhà", "Lọc không khí", "Dễ chăm"],
-      "is_new": false,
-      "created_at": "2022-03-14T16:50:00Z"
+      "tags": [
+        "Trong nhà",
+        "Lọc không khí",
+        "Dễ chăm"
+      ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Cây Trầu Bà",
       "science_name": "Epipremnum aureum",
       "ratings": [],
-      "average_rating": -1,
       "price": 150000,
       "old_price": 180000,
-      "bought": 0,
       "category": 3,
       "color": "Xanh lá",
       "description": "Cây leo trong nhà với lá hình tim, thích hợp làm cây treo hoặc để bàn.",
@@ -224,19 +264,19 @@
         "/images/spx2-8.png",
         "/images/spx2-9.png"
       ],
-      "tags": ["Trong nhà", "Cây leo", "Lọc không khí"],
-      "is_new": true,
-      "created_at": "2024-09-28T07:10:00Z"
+      "tags": [
+        "Trong nhà",
+        "Cây leo",
+        "Lọc không khí"
+      ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Cây Xoài",
       "science_name": "Mangifera indica",
       "ratings": [],
-      "average_rating": -1,
       "price": 400000,
       "old_price": 450000,
-      "bought": 0,
       "category": 4,
       "color": "Xanh lá",
       "description": "Cây ăn quả phổ biến với trái ngọt, thích hợp trồng trong vườn lớn.",
@@ -250,19 +290,19 @@
         "/images/spx2-9.png",
         "/images/spx2-10.png"
       ],
-      "tags": ["Cây ăn quả", "Bóng mát", "Nhiệt đới"],
-      "is_new": false,
-      "created_at": "2021-04-30T22:35:00Z"
+      "tags": [
+        "Cây ăn quả",
+        "Bóng mát",
+        "Nhiệt đới"
+      ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Cây Bàng Singapore",
       "science_name": "Ficus lyrata",
       "ratings": [],
-      "average_rating": -1,
       "price": 280000,
       "old_price": 320000,
-      "bought": 0,
       "category": 3,
       "color": "Xanh lá",
       "description": "Cây trong nhà hiện đại với lá lớn, phù hợp trang trí không gian sống.",
@@ -276,19 +316,19 @@
         "/images/spx2-10.png",
         "/images/spx2-11.png"
       ],
-      "tags": ["Trong nhà", "Cây cảnh", "Hiện đại"],
-      "is_new": true,
-      "created_at": "2023-12-01T13:40:00Z"
+      "tags": [
+        "Trong nhà",
+        "Cây cảnh",
+        "Hiện đại"
+      ]
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Cây Phượng Vĩ",
       "science_name": "Delonix regia",
       "ratings": [],
-      "average_rating": -1,
       "price": 500000,
       "old_price": 550000,
-      "bought": 0,
       "category": 5,
       "color": "Đỏ",
       "description": "Cây bóng mát với hoa đỏ rực rỡ, thường thấy ở trường học và đường phố.",
@@ -302,19 +342,19 @@
         "/images/spx2-11.png",
         "/images/spx2-12.png"
       ],
-      "tags": ["Bóng mát", "Hoa", "Cây công cộng"],
-      "is_new": false,
-      "created_at": "2020-09-15T05:55:00Z"
+      "tags": [
+        "Bóng mát",
+        "Hoa",
+        "Cây công cộng"
+      ]
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Cây Chuối Rẻ Quạt",
       "science_name": "Ravenala madagascariensis",
       "ratings": [],
-      "average_rating": -1,
       "price": 350000,
       "old_price": 400000,
-      "bought": 0,
       "category": 1,
       "color": "Xanh lá",
       "description": "Cây cảnh quan với lá lớn xếp như quạt, mang vẻ đẹp nhiệt đới.",
@@ -328,19 +368,19 @@
         "/images/spx2-12.png",
         "/images/spx2-13.png"
       ],
-      "tags": ["Cây cảnh quan", "Nhiệt đới", "Lá lớn"],
-      "is_new": true,
-      "created_at": "2024-07-19T09:20:00Z"
+      "tags": [
+        "Cây cảnh quan",
+        "Nhiệt đới",
+        "Lá lớn"
+      ]
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Cây Vạn Niên Thanh",
       "science_name": "Dieffenbachia seguine",
       "ratings": [],
-      "average_rating": -1,
       "price": 170000,
       "old_price": 200000,
-      "bought": 0,
       "category": 3,
       "color": "Xanh lá - Trắng",
       "description": "Cây trong nhà với lá xanh xen trắng, mang ý nghĩa trường tồn.",
@@ -354,19 +394,19 @@
         "/images/spx2-13.png",
         "/images/spx2-14.png"
       ],
-      "tags": ["Trong nhà", "Phong thủy", "Lọc không khí"],
-      "is_new": false,
-      "created_at": "2022-08-07T17:05:00Z"
+      "tags": [
+        "Trong nhà",
+        "Phong thủy",
+        "Lọc không khí"
+      ]
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Cây Tùng Bồng Lai",
       "science_name": "Podocarpus macrophyllus",
       "ratings": [],
-      "average_rating": -1,
       "price": 300000,
       "old_price": 350000,
-      "bought": 0,
       "category": 2,
       "color": "Xanh lá",
       "description": "Cây bonsai nhỏ với lá mềm mại, mang vẻ đẹp cổ điển.",
@@ -380,19 +420,19 @@
         "/images/spx2-14.png",
         "/images/spx2-15.png"
       ],
-      "tags": ["Bonsai", "Trong nhà", "Cổ điển"],
-      "is_new": true,
-      "created_at": "2023-05-22T12:15:00Z"
+      "tags": [
+        "Bonsai",
+        "Trong nhà",
+        "Cổ điển"
+      ]
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Cây Hồng Môn",
       "science_name": "Anthurium andraeanum",
       "ratings": [],
-      "average_rating": -1,
       "price": 220000,
       "old_price": 260000,
-      "bought": 0,
       "category": 5,
       "color": "Đỏ - Xanh biển",
       "description": "Cây trong nhà với hoa đỏ hình tim, mang ý nghĩa tình yêu và hạnh phúc.",
@@ -406,19 +446,19 @@
         "/images/spx2-15.png",
         "/images/spx2-16.png"
       ],
-      "tags": ["Trong nhà", "Hoa", "Phong thủy"],
-      "is_new": false,
-      "created_at": "2021-10-03T20:45:00Z"
+      "tags": [
+        "Trong nhà",
+        "Hoa",
+        "Phong thủy"
+      ]
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Cây Cau Tiểu Trâm",
       "science_name": "Chamaedorea elegans",
       "ratings": [],
-      "average_rating": -1,
       "price": 190000,
       "old_price": 230000,
-      "bought": 0,
       "category": 3,
       "color": "Xanh lá",
       "description": "Cây nhỏ gọn với lá mảnh, thích hợp làm cây cảnh trong nhà.",
@@ -432,16 +472,17 @@
         "/images/spx2-16.png",
         "/images/spx2-17.png"
       ],
-      "tags": ["Trong nhà", "Nhỏ gọn", "Lọc không khí"],
-      "is_new": true,
-      "created_at": "2024-01-15T06:30:00Z"
+      "tags": [
+        "Trong nhà",
+        "Nhỏ gọn",
+        "Lọc không khí"
+      ]
     }
   ],
   "news": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Những Loại Cây Tốt Nhất Cho Vườn Trong Nhà",
-      "cover": "/images/spx2-3.png",
       "content": [
         "Việc làm vườn trong nhà ngày càng trở nên phổ biến khi mọi người muốn mang thiên nhiên vào không gian sống của mình, đặc biệt là ở các đô thị lớn nơi diện tích xanh ngày càng thu hẹp.",
         "Một số loại cây đặc biệt phù hợp với môi trường trong nhà nhờ khả năng thích nghi cao và yêu cầu chăm sóc thấp, giúp người mới bắt đầu cũng có thể dễ dàng chăm sóc.",
@@ -460,13 +501,11 @@
           "content": "Cảm ơn các mẹo hay, tôi vừa mua cây Sung Lá Đàn đầu tiên!",
           "created_at": "2023-10-19T15:20:00Z"
         }
-      ],
-      "created_at": "2023-09-10T14:30:00Z"
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Mẹo Chăm Sóc Cây Theo Mùa",
-      "cover": "/images/spx2-2.png",
       "content": [
         "Khi các mùa thay đổi, việc chăm sóc cây cối cũng cần được điều chỉnh để đảm bảo chúng luôn khỏe mạnh và phát triển tốt qua các điều kiện thời tiết khác nhau.",
         "Vào mùa xuân, đây là thời điểm lý tưởng để cắt tỉa cành và bón phân cho hầu hết các loại cây, vì chúng bắt đầu giai đoạn sinh trưởng tích cực sau thời kỳ nghỉ đông.",
@@ -481,158 +520,103 @@
           "content": "Nhắc nhở tuyệt vời về việc trồng cây mùa thu! Tôi đang lên kế hoạch thêm vài cây Phong Nhật Bản vào vườn tháng tới.",
           "created_at": "2023-10-05T11:30:00Z"
         }
-      ],
-      "created_at": "2023-08-15T09:15:00Z"
-    },
-    {
-      "id": 3,
-      "title": "Lợi Ích Của Cây Xanh Đối Với Sức Khỏe Tinh Thần",
-      "cover": "/images/spx2-1.png",
-      "content": [
-        "Cây xanh không chỉ làm đẹp không gian sống mà còn mang lại nhiều lợi ích cho sức khỏe tinh thần, đặc biệt trong cuộc sống hiện đại đầy áp lực.",
-        "Nghiên cứu đã chỉ ra rằng việc tiếp xúc với thiên nhiên, dù chỉ qua những chậu cây trong nhà, có thể giúp giảm căng thẳng, lo âu và cải thiện tâm trạng một cách đáng kể.",
-        "Cây Trầu Bà (Epipremnum aureum) và Cây Cau Tiểu Trâm (Chamaedorea elegans) là những ví dụ điển hình, vừa dễ chăm sóc vừa có khả năng lọc không khí, mang lại cảm giác thư giãn.",
-        "Ngoài ra, việc chăm sóc cây cối còn được xem như một hình thức thiền định nhẹ nhàng, giúp con người tập trung hơn và tìm thấy sự bình yên trong những hoạt động đơn giản như tưới nước hay cắt tỉa lá.",
-        "Để tối ưu hóa lợi ích, hãy đặt cây ở những nơi bạn thường xuyên sinh hoạt như phòng làm việc hoặc phòng khách, tạo nên một không gian xanh gần gũi và thoải mái."
-      ],
-      "comments": [
-        {
-          "username": "yoga_và_cây",
-          "content": "Tôi đặt cây Trầu Bà ở bàn làm việc và cảm thấy thư giãn hơn hẳn!",
-          "created_at": "2024-03-12T09:15:00Z"
-        },
-        {
-          "username": "nguoi_sống_xanh",
-          "content": "Bài viết rất đúng, chăm cây thực sự giúp tôi bớt căng thẳng.",
-          "created_at": "2024-03-13T14:40:00Z"
-        }
-      ],
-      "created_at": "2024-02-20T07:45:00Z"
-    },
-    {
-      "id": 4,
-      "title": "Cách Chọn Cây Phù Hợp Với Phong Thủy",
-      "cover": "/images/spx2-4.png",
-      "content": [
-        "Phong thủy từ lâu đã là một yếu tố quan trọng trong văn hóa Á Đông, và việc chọn cây cảnh phù hợp có thể giúp cân bằng năng lượng trong không gian sống.",
-        "Cây Kim Tiền và Cây Hồng Môn (Anthurium andraeanum) thường được chọn vì chúng tượng trưng cho tài lộc và tình yêu, phù hợp để đặt ở hướng Đông Nam hoặc Tây Nam của ngôi nhà.",
-        "Ngược lại, các loại cây có gai như xương rồng nên tránh đặt ở khu vực sinh hoạt chính, vì theo phong thủy, chúng có thể tạo ra năng lượng tiêu cực hoặc gây xung đột.",
-        "Ngoài việc chọn loại cây, vị trí đặt cây cũng rất quan trọng; ví dụ, cây lớn như Phong Nhật Bản (Acer palmatum) nên đặt ở sân vườn để tránh chặn dòng chảy năng lượng trong nhà.",
-        "Hãy tham khảo ý kiến chuyên gia phong thủy hoặc thử nghiệm với những loại cây nhỏ trước khi quyết định bố trí cây lớn để đảm bảo hài hòa với không gian của bạn."
-      ],
-      "comments": [
-        {
-          "username": "phong_thuy_123",
-          "content": "Cảm ơn bài viết! Tôi sẽ thử đặt cây Hồng Môn ở phòng khách xem sao.",
-          "created_at": "2022-11-08T16:25:00Z"
-        }
-      ],
-      "created_at": "2022-10-01T12:10:00Z"
-    },
-    {
-      "id": 5,
-      "title": "Xu Hướng Trang Trí Vườn Nhỏ Năm 2025",
-      "cover": "/images/spx2-5.png",
-      "content": [
-        "Năm 2025 đang chứng kiến sự lên ngôi của các khu vườn nhỏ gọn, phù hợp với không gian sống hiện đại, đặc biệt ở các căn hộ hoặc nhà phố có diện tích hạn chế.",
-        "Cây bonsai như Tùng Bồng Lai (Podocarpus macrophyllus) và Sung (Ficus retusa) đang trở thành lựa chọn hàng đầu nhờ kích thước nhỏ và vẻ đẹp tinh tế, dễ dàng đặt trên bàn hoặc kệ.",
-        "Xu hướng sử dụng chậu treo với các loại cây leo như Trầu Bà hoặc dây leo nhỏ cũng được ưa chuộng, giúp tiết kiệm không gian mà vẫn tạo điểm nhấn xanh mát.",
-        "Ngoài ra, việc kết hợp cây xanh với các yếu tố trang trí như đèn LED, đá tự nhiên hoặc tiểu cảnh nước đang tạo nên những khu vườn mini độc đáo và đầy sáng tạo.",
-        "Để bắt kịp xu hướng, bạn có thể thử nghiệm với những loại cây ít cần chăm sóc nhưng vẫn giữ được vẻ đẹp lâu dài, phù hợp với lối sống bận rộn ngày nay."
-      ],
-      "comments": [
-        {
-          "username": "vuon_nho_dep",
-          "content": "Tôi vừa làm một góc bonsai nhỏ theo gợi ý, đẹp lắm!",
-          "created_at": "2025-01-20T10:50:00Z"
-        },
-        {
-          "username": "nguoi_thich_trang_tri",
-          "content": "Chậu treo là ý tưởng tuyệt vời, cảm ơn bài viết!",
-          "created_at": "2025-01-21T13:15:00Z"
-        }
-      ],
-      "created_at": "2024-12-15T08:20:00Z"
+      ]
     }
   ],
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "user_id": 2,
       "status": "đã giao",
       "trees": [
-        { "id": 1, "quantity": 1 },
-        { "id": 3, "quantity": 2 }
+        {
+          "id": 1,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 2
+        }
       ],
       "address": "123 Đường Vườn, Quận 1, TP.HCM",
       "phone": "+8423456789"
     },
     {
-      "id": 2,
+      "id": "2",
       "user_id": 3,
       "status": "đang xử lý",
-      "trees": [{ "id": 2, "quantity": 1 }],
+      "trees": [
+        {
+          "id": 2,
+          "quantity": 1
+        }
+      ],
       "address": "456 Đại Lộ Công Viên, Quận 2, TP.HCM",
       "phone": "+8434567890"
     }
   ],
   "requests": [
     {
-      "id": 1,
+      "id": "1",
       "suggest_tree": {
         "name": "Bạch Dương Bạc",
         "description": "Cây rụng lá kích thước trung với vỏ trắng đặc trưng.",
-        "image": ["bach_duong_bac_request.jpg"]
+        "image": [
+          "bach_duong_bac_request.jpg"
+        ]
       },
       "status": "đang chờ"
     },
     {
-      "id": 2,
+      "id": "2",
       "suggest_tree": {
         "name": "Anh Đào Nhật Bản",
         "description": "Cây hoa anh đào Nhật Bản, nổi tiếng với hoa hồng phấn đẹp vào mùa xuân.",
-        "image": ["anh_dao_nhat_ban_request.jpg", "anh_dao_closeup.jpg"]
+        "image": [
+          "anh_dao_nhat_ban_request.jpg",
+          "anh_dao_closeup.jpg"
+        ]
       },
       "status": "đã duyệt"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Cây Cảnh Quan"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Cây Bonsai"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Cây Trong Nhà"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Cây Ăn Quả"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Cây Có Hoa"
     }
   ],
   "notifications": [
     {
-      "id": 1,
+      "id": "1",
       "user_id": 2,
       "content": "Cây Phong Nhật Bản mới vừa nhập kho!",
       "url": "/trees/1"
     },
     {
-      "id": 2,
+      "id": "2",
       "user_id": 2,
       "content": "Đơn hàng #1 của bạn đã được giao",
       "url": "/orders/1"
     },
     {
-      "id": 3,
+      "id": "3",
       "user_id": 3,
       "content": "Ưu đãi đặc biệt cho cây Bonsai trong tuần này",
       "url": "/category/2"
