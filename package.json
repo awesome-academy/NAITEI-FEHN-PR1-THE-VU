@@ -37,5 +37,6 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "vite": "^6.2.0"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
