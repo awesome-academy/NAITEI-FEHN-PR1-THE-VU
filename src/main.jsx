@@ -15,6 +15,7 @@ import Statistics from "./pages/Statistics.jsx";
 import UserList from "./pages/UserList.jsx";
 import OrderList from "./pages/OrderList.jsx";
 import CategoryList from "./pages/CategoryList.jsx";
+import AdminProductList from "./pages/AdminProductList.jsx";
 import HistoryOrder from "./pages/HistoryOrder.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -36,6 +37,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/admin/users" element={<UserList />} />
             <Route path="/admin/orders" element={<OrderList />} />
             <Route path="/admin/categories" element={<CategoryList />} />
+            <Route path="/admin/products" element={<AdminProductList />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -531,6 +531,30 @@
       ],
       "is_new": true,
       "created_at": "2024-01-15T06:30:00Z"
+    },
+    {
+      "id": "4VYP0r_",
+      "name": "Hoa sen đá",
+      "scienceName": "",
+      "price": "10000",
+      "old_price": "20000",
+      "color": "Xanh",
+      "description": "Sen đá là loài cây trang trí nhỏ, dễ chăm sóc, ...",
+      "tags": [
+        "Rụng lá",
+        "Cây cảnh"
+      ],
+      "information": {
+        "family": "Lotus",
+        "height": "3-7cm",
+        "fullDescription": ""
+      },
+      "image": [
+        "https://res.cloudinary.com/dvvzcljcn/image/upload/v1743592204/senda_bp5ini.jpg"
+      ],
+      "category": "3",
+      "created_at": "2025-04-03T10:06:56.598Z",
+      "bought": 0
     }
   ],
   "news": [
@@ -994,6 +1018,17 @@
       },
       "created_at": "2025-03-27T07:13:25.286Z",
       "id": 3
+    },
+    {
+      "suggest_tree": {
+        "name": "Cay sen da",
+        "description": "Cay trang tri nho, khong mat qua nhieu cong suc de cham soc",
+        "images": [
+          "https://res.cloudinary.com/dvvzcljcn/image/upload/v1743563094/senda_uuf4ef.jpg"
+        ]
+      },
+      "created_at": "2025-04-02T03:02:47.158Z",
+      "id": 4
     }
   ],
   "categories": [

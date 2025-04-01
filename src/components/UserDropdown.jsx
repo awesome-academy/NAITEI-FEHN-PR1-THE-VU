@@ -38,7 +38,7 @@ export default function UserDropdown() {
             </a>
           </li>
           <li className="w-full px-2 py-2 hover:bg-gray-100 hover:text-main">
-            <a href="#" className="flex items-center">
+            <a href="/admin/products" className="flex items-center">
               <BriefcaseIcon className="size-3 mr-1" />
               Sản phẩm
             </a>
