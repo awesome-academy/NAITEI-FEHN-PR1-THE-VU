@@ -18,8 +18,9 @@ import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { setSearchQuery } from "../store/productSlice";
 import NotificationDropdown from './NotificationDropdown';
+import CartDisplay from './CartDisplay';
+import axios from "axios"; 
 
-// Tạo một event bus đơn giản để giao tiếp giữa các component
 export const AuthEvents = {
   listeners: {},
   subscribe(event, callback) {
@@ -54,7 +55,6 @@ export default function Header() {
   const userMenuRef = useRef(null);
   const userMobileMenuRef = useRef(null);
 
-  // Kiểm tra người dùng đăng nhập khi component được mount
   useEffect(() => {
     const checkUserLogin = () => {
       const storedUser = localStorage.getItem('user') || sessionStorage.getItem('user');
@@ -73,25 +73,22 @@ export default function Header() {
 
     checkUserLogin();
 
-    // Lắng nghe sự kiện thay đổi đăng nhập
     const unsubscribe = AuthEvents.subscribe('auth-change', checkUserLogin);
-
-    // Lắng nghe sự kiện thay đổi localStorage
+    
     const handleStorageChange = (e) => {
-      if (e.key === 'user' || e.key === null) { // null khi clearStorage được gọi
+      if (e.key === 'user' || e.key === null) {
         checkUserLogin();
       }
     };
-
+    
     window.addEventListener('storage', handleStorageChange);
-
+    
     return () => {
       unsubscribe();
       window.removeEventListener('storage', handleStorageChange);
     };
   }, []);
 
-  // Kiểm tra lại thông tin đăng nhập khi route thay đổi
   useEffect(() => {
     const checkUserLogin = () => {
       const storedUser = localStorage.getItem('user') || sessionStorage.getItem('user');
@@ -111,16 +108,14 @@ export default function Header() {
     checkUserLogin();
   }, [location.pathname]);
 
-  // Xử lý đăng xuất
   const handleLogout = () => {
     localStorage.removeItem('user');
     sessionStorage.removeItem('user');
     setCurrentUser(null);
     setIsUserMenuOpen(false);
-
-    // Phát sự kiện đăng xuất
+    
     AuthEvents.publish('auth-change', null);
-
+    
     navigate('/');
   };
 
@@ -141,13 +136,13 @@ export default function Header() {
         setIsUserMenuOpen(false);
       }
     }
-
+    
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+  
   const toggleUserMenu = () => {
     setIsUserMenuOpen(!isUserMenuOpen);
   };
@@ -160,7 +155,6 @@ export default function Header() {
     }
   };
 
-  // Render phần user menu tùy thuộc vào trạng thái đăng nhập
   const renderUserSection = () => {
     if (currentUser) {
       return (
@@ -174,31 +168,37 @@ export default function Header() {
               <UserIcon className="size-4" />
             </div>
           </button>
-
+          
           {isUserMenuOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
               <div className="py-1">
-                <a
-                  href="/tai-khoan"
+                <a 
+                  href="/tai-khoan" 
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Thông tin tài khoản
                 </a>
-                <a
-                  href="/order-history"
+                <a 
+                  href="/cart" 
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                  Giỏ hàng của tôi
+                </a>
+                <a 
+                  href="/order-history" 
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Lịch sử mua hàng
                 </a>
                 {currentUser.role === 'admin' && (
-                  <a
-                    href="/admin"
+                  <a 
+                    href="/admin" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Quản trị website
                   </a>
                 )}
-                <button
+                <button 
                   onClick={handleLogout}
                   className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                 >
@@ -243,7 +243,7 @@ export default function Header() {
             <UserIcon className="size-6" />
           </div>
         </button>
-
+        
         {isUserMenuOpen && (
           <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
             <div className="py-1">
@@ -252,27 +252,33 @@ export default function Header() {
                   <div className="px-4 py-2 text-sm font-medium text-green-600 border-b border-gray-200">
                     {currentUser.name}
                   </div>
-                  <a
-                    href="/tai-khoan"
+                  <a 
+                    href="/tai-khoan" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Thông tin tài khoản
                   </a>
-                  <a
-                    href="/order-history"
+                  <a 
+                    href="/cart" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Giỏ hàng của tôi
+                  </a>
+                  <a 
+                    href="/order-history" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Lịch sử mua hàng
                   </a>
                   {currentUser.role === 'admin' && (
-                    <a
-                      href="/admin"
+                    <a 
+                      href="/admin" 
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Quản trị website
                     </a>
                   )}
-                  <button
+                  <button 
                     onClick={handleLogout}
                     className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                   >
@@ -281,14 +287,14 @@ export default function Header() {
                 </>
               ) : (
                 <>
-                  <a
-                    href="/login"
+                  <a 
+                    href="/login" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Đăng nhập
                   </a>
-                  <a
-                    href="/register"
+                  <a 
+                    href="/register" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Đăng ký
@@ -299,6 +305,57 @@ export default function Header() {
           </div>
         )}
       </div>
+    );
+  };
+
+  // Component CartDisplay cho mobile
+  const MobileCartDisplay = () => {
+    const [cartItemCount, setCartItemCount] = useState(0);
+
+    useEffect(() => {
+      const fetchCartInfo = async () => {
+        if (!currentUser) {
+          setCartItemCount(0);
+          return;
+        }
+
+        try {
+          const response = await axios.get(`http://localhost:5000/orders?user_id=${currentUser.id}&status=trong giỏ hàng`);
+          
+          if (response.data.length > 0) {
+            const itemCount = response.data[0].trees.reduce((total, item) => {
+              return total + item.quantity;
+            }, 0);
+            
+            setCartItemCount(itemCount);
+          } else {
+            setCartItemCount(0);
+          }
+        } catch (error) {
+          console.error('Lỗi khi lấy thông tin giỏ hàng (mobile):', error);
+          setCartItemCount(0);
+        }
+      };
+
+      fetchCartInfo();
+
+      // Lắng nghe sự kiện cart-update
+      const unsubscribe = AuthEvents.subscribe('cart-update', fetchCartInfo);
+      
+      return () => {
+        unsubscribe();
+      };
+    }, [currentUser]);
+
+    return (
+      <a href="/cart" className="cursor-pointer hover:opacity-70 mr-3 relative">
+        <ShoppingCartIcon className="size-6" />
+        {cartItemCount > 0 && (
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            {cartItemCount > 99 ? '99+' : cartItemCount}
+          </span>
+        )}
+      </a>
     );
   };
 
@@ -329,51 +386,7 @@ export default function Header() {
             </div>
           </div>
           <div className="flex">
-            <a
-              href="/login"
-              className="flex justify-center items-center p-2.5 border-l-[0.5px] border-gray-700 hover:text-white"
-            >
-              <UserIcon className="size-4 mr-1" />
-              <span>Đăng nhập</span>
-            </a>
-            <a
-              href="/register"
-              className="flex justify-center items-center p-2.5 border-x-[0.5px] border-gray-700 hover:text-white"
-            >
-              <UserPlusIcon className="size-4 mr-1" />
-              <span>Đăng ký</span>
-            </a>
-
-            <div className="hidden sm:block relative" ref={userMenuRef}>
-              <button
-                className="flex justify-center items-center p-2.5 hover:text-white"
-                onClick={toggleUserMenu}
-              >
-                Xin chào, Nguyễn Văn A!
-                <div className="w-6 h-6 rounded-full ml-2 bg-gray-600 flex items-center justify-center">
-                  <UserIcon className="size-4" />
-                </div>
-              </button>
-
-              {isUserMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
-                  <div className="py-1">
-                    <a
-                      href="/order-history"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Lịch sử mua hàng
-                    </a>
-                    <a
-                      href="/logout"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Đăng xuất
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
+            {renderUserSection()}
           </div>
         </div>
 
@@ -410,13 +423,9 @@ export default function Header() {
                   </div>
                 </form>
 
-                <a
-                  href="/cart"
-                  className="flex items-center justify-between ml-2 text-sm hover:text-gray-400"
-                >
-                  <ShoppingCartIcon className="size-4 md:size-6 mr-1" />
-                  <span className="text-sm">0 Sản phẩm</span>
-                </a>
+                {/* Thay thế phần giỏ hàng cũ bằng component CartDisplay */}
+                <CartDisplay />
+                
                 <div className="ml-4">
                   <NotificationDropdown />
                 </div>
@@ -520,38 +529,9 @@ export default function Header() {
               <div className="mr-3">
                 <NotificationDropdown />
               </div>
-              <a href="/cart" className="cursor-pointer hover:opacity-70 mr-3">
-                <ShoppingCartIcon className="size-6" />
-              </a>
-              <div className="sm:hidden relative" ref={userMobileMenuRef}>
-                <button
-                  className="flex justify-center items-center p-2.5 hover:text-white"
-                  onClick={toggleUserMenu}
-                >
-                  <div className="w-6 h-6 rounded-full flex items-center justify-center">
-                    <UserIcon className="size-6" />
-                  </div>
-                </button>
-
-                {isUserMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
-                    <div className="py-1">
-                      <a
-                        href="/order-history"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Lịch sử mua hàng
-                      </a>
-                      <a
-                        href="/logout"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Đăng xuất
-                      </a>
-                    </div>
-                  </div>
-                )}
-              </div>
+              {/* Sử dụng component giỏ hàng cho mobile */}
+              <MobileCartDisplay />
+              {renderMobileUserMenu()}
             </div>
           </div>
 

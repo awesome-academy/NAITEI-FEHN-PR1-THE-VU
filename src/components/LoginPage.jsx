@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { AuthEvents } from '../components/Header'; // Import AuthEvents từ Header
+import { AuthEvents } from '../components/Header';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -15,7 +16,6 @@ const LoginPage = () => {
   const [success, setSuccess] = useState(false);
   const [redirectMessage, setRedirectMessage] = useState('Đang chuyển hướng...');
 
-  // Kiểm tra nếu đã đăng nhập thì chuyển hướng
   useEffect(() => {
     const storedUser = localStorage.getItem('user') || sessionStorage.getItem('user');
     if (storedUser) {
@@ -72,7 +72,6 @@ const LoginPage = () => {
           setLoading(false);
           return;
         }
-
         const userData = {
           id: user.id,
           name: user.name,
@@ -81,7 +80,6 @@ const LoginPage = () => {
           social_link: user.social_link || '',
           role: user.role || 'user'
         };
-
         if (formData.rememberMe) {
           localStorage.setItem('user', JSON.stringify(userData));
         } else {
@@ -92,7 +90,6 @@ const LoginPage = () => {
 
         setSuccess(true);
 
-        // Kiểm tra role để hiển thị thông báo phù hợp và thực hiện chuyển hướng
         if (userData.role === 'admin') {
           setRedirectMessage('Đang chuyển hướng đến trang quản trị...');
           setTimeout(() => {
@@ -143,7 +140,6 @@ const LoginPage = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Phần đăng nhập */}
           <div className="bg-white p-6 rounded shadow md:w-1/2">
             {success ? (
               <div className="text-center py-8">
@@ -154,7 +150,6 @@ const LoginPage = () => {
             ) : (
               <>
                 <h2 className="text-xl font-semibold text-green-500 mb-6 uppercase">Thông tin cá nhân</h2>
-
                 <form onSubmit={handleSubmit}>
                   <div className="mb-4">
                     <label className="block text-gray-700 mb-2">
@@ -169,7 +164,6 @@ const LoginPage = () => {
                     />
                     {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                   </div>
-
                   <div className="mb-4">
                     <label className="block text-gray-700 mb-2">
                       Mật khẩu
@@ -183,7 +177,6 @@ const LoginPage = () => {
                     />
                     {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
                   </div>
-
                   <div className="mb-4">
                     <label className="flex items-center text-gray-700">
                       <input
@@ -199,13 +192,11 @@ const LoginPage = () => {
                       Bạn quên mật khẩu?
                     </a>
                   </div>
-
                   {errors.auth && (
                     <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
                       {errors.auth}
                     </div>
                   )}
-
                   <button
                     type="submit"
                     className={`px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors w-full ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
@@ -226,7 +217,6 @@ const LoginPage = () => {
             )}
           </div>
 
-          {/* Phần "Bạn chưa có tài khoản?" */}
           <div className="bg-white p-6 rounded shadow md:w-1/2">
             <h2 className="text-xl font-semibold text-green-500 mb-6 uppercase">Bạn chưa có tài khoản?</h2>
 
@@ -235,7 +225,7 @@ const LoginPage = () => {
             </p>
 
             <a
-              href="/register"
+              href="/dang-ky"
               className="inline-block px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
             >
               ĐĂNG KÝ
