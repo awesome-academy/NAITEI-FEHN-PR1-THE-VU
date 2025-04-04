@@ -47,13 +47,13 @@ export default function Header() {
         setIsUserMenuOpen(false);
       }
     }
-    
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  
+
   const toggleUserMenu = () => {
     setIsUserMenuOpen(!isUserMenuOpen);
   };
@@ -118,18 +118,18 @@ export default function Header() {
                   <UserIcon className="size-4" />
                 </div>
               </button>
-              
+
               {isUserMenuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
                   <div className="py-1">
-                    <a 
-                      href="/order-history" 
+                    <a
+                      href="/order-history"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Lịch sử mua hàng
                     </a>
-                    <a 
-                      href="/logout" 
+                    <a
+                      href="/logout"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Đăng xuất
@@ -221,7 +221,7 @@ export default function Header() {
                 <a href="/request-plant">ĐỀ XUẤT SẢN PHẨM</a>
               </li>
               <li className="py-2.5 px-4 hover:bg-hover">
-                <a href="#">TIN TỨC</a>
+                <a href="/news">TIN TỨC</a>
               </li>
               <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#">LIÊN HỆ</a>
@@ -299,18 +299,18 @@ export default function Header() {
                     <UserIcon className="size-6" />
                   </div>
                 </button>
-                
+
                 {isUserMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
                     <div className="py-1">
-                      <a 
-                        href="/order-history" 
+                      <a
+                        href="/order-history"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       >
                         Lịch sử mua hàng
                       </a>
-                      <a 
-                        href="/logout" 
+                      <a
+                        href="/logout"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       >
                         Đăng xuất
@@ -359,7 +359,7 @@ export default function Header() {
                 </a>
               </li>
               <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
-                <a href="#" className="flex items-center">
+                <a href="/news" className="flex items-center">
                   TIN TỨC
                 </a>
               </li>

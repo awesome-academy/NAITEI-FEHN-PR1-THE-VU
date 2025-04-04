@@ -70,7 +70,7 @@ export default function OrderList() {
     };
 
     fetchUsers();
-  }, [currentPage]);
+  }, []);
 
   useEffect(() => {
     if (orders) {
