@@ -17,6 +17,7 @@ import OrderList from "./pages/OrderList.jsx";
 import CategoryList from "./pages/CategoryList.jsx";
 import AdminProductList from "./pages/AdminProductList.jsx";
 import HistoryOrder from "./pages/HistoryOrder.jsx";
+import PlantRequestList from "./pages/PlantRequestList.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -38,6 +39,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/admin/orders" element={<OrderList />} />
             <Route path="/admin/categories" element={<CategoryList />} />
             <Route path="/admin/products" element={<AdminProductList />} />
+            <Route path="/admin/requests" element={<PlantRequestList />} />
           </Route>
         </Routes>
       </BrowserRouter>

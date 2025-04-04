@@ -21,6 +21,7 @@ export default function RequestPlant() {
       name: "",
       description: "",
       images: [],
+      status: "đang chờ"
     },
     created_at: new Date().toISOString(),
   });
