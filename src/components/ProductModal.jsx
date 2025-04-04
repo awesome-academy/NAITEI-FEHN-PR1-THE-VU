@@ -12,13 +12,14 @@ const cloudinaryConfig = {
 
 const urlParams = new URLSearchParams(window.location.href.split("?")[1]);
 
-export default function ProductModal({ isOpen, onClose, product = null }) {
+export default function ProductModal({ isOpen, onClose, onOpen, product = null }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState(null);
   const [tags, setTags] = useState(null);
   const [selectedTags, setSelectedTags] = useState([]);
   const [fileList, setFileList] = useState([]);
+  const [autoOpened, setAutoOpened] = useState(false);
   const [formData, setFormData] = useState({
     id: null,
     name: "",
@@ -159,6 +160,21 @@ export default function ProductModal({ isOpen, onClose, product = null }) {
           "http://localhost:5000/trees",
           updatedFormData,
         );
+        if (urlParams.get("user_id")) {
+          await axios.post("http://localhost:5000/notifications", {
+            user_id: urlParams.get("user_id"),
+            title: "Yêu cầu thêm cây mới đã được duyệt",
+            content: `Yêu cầu thêm cây "${formData.name}" của bạn đã được duyệt.`,
+            read: false,
+            created_at: new Date().toISOString(),
+          });
+          await axios.patch(
+            `http://localhost:5000/requests/${urlParams.get("request_id")}`,
+            {
+              status: "đã duyệt",
+            },
+          );
+        }
       } else {
         response = await axios.patch(
           `http://localhost:5000/trees/${formData.id}`,
@@ -190,6 +206,14 @@ export default function ProductModal({ isOpen, onClose, product = null }) {
 
     onClose();
   };
+
+  useEffect(() => {
+    const requestId = urlParams.get("request_id");
+    if (requestId && !autoOpened && !isOpen && onOpen) {
+      onOpen();
+      setAutoOpened(true);
+    }
+  }, [isOpen, onOpen, autoOpened]);
 
   useEffect(() => {
     const fetchData = async () => {

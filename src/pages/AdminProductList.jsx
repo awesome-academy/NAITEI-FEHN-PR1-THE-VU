@@ -109,6 +109,7 @@ export default function AdminProductList() {
           setModalOpen(false);
           setSelectedProduct(null);
         }}
+        onOpen={() => setModalOpen(true)}
         product={selectedProduct}
       />
 
