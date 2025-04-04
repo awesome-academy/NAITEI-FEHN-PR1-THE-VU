@@ -19,6 +19,7 @@ import OrderList from "./pages/OrderList.jsx";
 import CategoryList from "./pages/CategoryList.jsx";
 import AdminProductList from "./pages/AdminProductList.jsx";
 import HistoryOrder from "./pages/HistoryOrder.jsx";
+import NewsList from "./pages/NewsList.jsx";
 import PlantRequestList from "./pages/PlantRequestList.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -35,6 +36,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/products" element={<ProductList />} />
             <Route path="/request-plant" element={<RequestPlant />} />
             <Route path="/order-history" element={<HistoryOrder />} />
+            <Route path="/news" element={<NewsList />} />
           </Route>
           <Route path="/admin" element={<AdminDashboard />}>
             <Route index element={<Statistics />} />

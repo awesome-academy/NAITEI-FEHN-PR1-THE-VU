@@ -75,16 +75,16 @@ export default function Header() {
 
     // Lắng nghe sự kiện thay đổi đăng nhập
     const unsubscribe = AuthEvents.subscribe('auth-change', checkUserLogin);
-    
+
     // Lắng nghe sự kiện thay đổi localStorage
     const handleStorageChange = (e) => {
       if (e.key === 'user' || e.key === null) { // null khi clearStorage được gọi
         checkUserLogin();
       }
     };
-    
+
     window.addEventListener('storage', handleStorageChange);
-    
+
     return () => {
       unsubscribe();
       window.removeEventListener('storage', handleStorageChange);
@@ -117,10 +117,10 @@ export default function Header() {
     sessionStorage.removeItem('user');
     setCurrentUser(null);
     setIsUserMenuOpen(false);
-    
+
     // Phát sự kiện đăng xuất
     AuthEvents.publish('auth-change', null);
-    
+
     navigate('/');
   };
 
@@ -141,13 +141,13 @@ export default function Header() {
         setIsUserMenuOpen(false);
       }
     }
-    
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  
+
   const toggleUserMenu = () => {
     setIsUserMenuOpen(!isUserMenuOpen);
   };
@@ -174,31 +174,31 @@ export default function Header() {
               <UserIcon className="size-4" />
             </div>
           </button>
-          
+
           {isUserMenuOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
               <div className="py-1">
-                <a 
-                  href="/tai-khoan" 
+                <a
+                  href="/tai-khoan"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Thông tin tài khoản
                 </a>
-                <a 
-                  href="/order-history" 
+                <a
+                  href="/order-history"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Lịch sử mua hàng
                 </a>
                 {currentUser.role === 'admin' && (
-                  <a 
-                    href="/admin" 
+                  <a
+                    href="/admin"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Quản trị website
                   </a>
                 )}
-                <button 
+                <button
                   onClick={handleLogout}
                   className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                 >
@@ -243,7 +243,7 @@ export default function Header() {
             <UserIcon className="size-6" />
           </div>
         </button>
-        
+
         {isUserMenuOpen && (
           <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
             <div className="py-1">
@@ -252,27 +252,27 @@ export default function Header() {
                   <div className="px-4 py-2 text-sm font-medium text-green-600 border-b border-gray-200">
                     {currentUser.name}
                   </div>
-                  <a 
-                    href="/tai-khoan" 
+                  <a
+                    href="/tai-khoan"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Thông tin tài khoản
                   </a>
-                  <a 
-                    href="/order-history" 
+                  <a
+                    href="/order-history"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Lịch sử mua hàng
                   </a>
                   {currentUser.role === 'admin' && (
-                    <a 
-                      href="/admin" 
+                    <a
+                      href="/admin"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Quản trị website
                     </a>
                   )}
-                  <button 
+                  <button
                     onClick={handleLogout}
                     className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                   >
@@ -281,14 +281,14 @@ export default function Header() {
                 </>
               ) : (
                 <>
-                  <a 
-                    href="/login" 
+                  <a
+                    href="/login"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Đăng nhập
                   </a>
-                  <a 
-                    href="/register" 
+                  <a
+                    href="/register"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Đăng ký
@@ -329,7 +329,51 @@ export default function Header() {
             </div>
           </div>
           <div className="flex">
-            {renderUserSection()}
+            <a
+              href="/login"
+              className="flex justify-center items-center p-2.5 border-l-[0.5px] border-gray-700 hover:text-white"
+            >
+              <UserIcon className="size-4 mr-1" />
+              <span>Đăng nhập</span>
+            </a>
+            <a
+              href="/register"
+              className="flex justify-center items-center p-2.5 border-x-[0.5px] border-gray-700 hover:text-white"
+            >
+              <UserPlusIcon className="size-4 mr-1" />
+              <span>Đăng ký</span>
+            </a>
+
+            <div className="hidden sm:block relative" ref={userMenuRef}>
+              <button
+                className="flex justify-center items-center p-2.5 hover:text-white"
+                onClick={toggleUserMenu}
+              >
+                Xin chào, Nguyễn Văn A!
+                <div className="w-6 h-6 rounded-full ml-2 bg-gray-600 flex items-center justify-center">
+                  <UserIcon className="size-4" />
+                </div>
+              </button>
+
+              {isUserMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                  <div className="py-1">
+                    <a
+                      href="/order-history"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Lịch sử mua hàng
+                    </a>
+                    <a
+                      href="/logout"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Đăng xuất
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -410,7 +454,7 @@ export default function Header() {
                 <a href="/request-plant">ĐỀ XUẤT SẢN PHẨM</a>
               </li>
               <li className="py-2.5 px-4 hover:bg-hover">
-                <a href="#">TIN TỨC</a>
+                <a href="/news">TIN TỨC</a>
               </li>
               <li className="py-2.5 px-4 hover:bg-hover">
                 <a href="#">LIÊN HỆ</a>
@@ -479,7 +523,35 @@ export default function Header() {
               <a href="/cart" className="cursor-pointer hover:opacity-70 mr-3">
                 <ShoppingCartIcon className="size-6" />
               </a>
-              {renderMobileUserMenu()}
+              <div className="sm:hidden relative" ref={userMobileMenuRef}>
+                <button
+                  className="flex justify-center items-center p-2.5 hover:text-white"
+                  onClick={toggleUserMenu}
+                >
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center">
+                    <UserIcon className="size-6" />
+                  </div>
+                </button>
+
+                {isUserMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                    <div className="py-1">
+                      <a
+                        href="/order-history"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Lịch sử mua hàng
+                      </a>
+                      <a
+                        href="/logout"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Đăng xuất
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
@@ -520,7 +592,7 @@ export default function Header() {
                 </a>
               </li>
               <li className="w-full pl-2 py-2 hover:bg-hover hover:text-white">
-                <a href="#" className="flex items-center">
+                <a href="/news" className="flex items-center">
                   TIN TỨC
                 </a>
               </li>
@@ -536,4 +608,3 @@ export default function Header() {
     </header>
   );
 }
-

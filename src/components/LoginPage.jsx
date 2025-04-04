@@ -51,28 +51,28 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
-    
+
     if (Object.keys(validationErrors).length === 0) {
       try {
         setLoading(true);
-        
+
         const API_URL = 'http://localhost:5000';
         const response = await axios.get(`${API_URL}/users?email=${encodeURIComponent(formData.email)}`);
-        
+
         if (response.data.length === 0) {
           setErrors({ auth: 'Email hoặc mật khẩu không đúng' });
           setLoading(false);
           return;
         }
-        
+
         const user = response.data[0];
-        
+
         if (user.password !== formData.password) {
           setErrors({ auth: 'Email hoặc mật khẩu không đúng' });
           setLoading(false);
           return;
         }
-        
+
         const userData = {
           id: user.id,
           name: user.name,
@@ -81,7 +81,7 @@ const LoginPage = () => {
           social_link: user.social_link || '',
           role: user.role || 'user'
         };
-        
+
         if (formData.rememberMe) {
           localStorage.setItem('user', JSON.stringify(userData));
         } else {
@@ -89,9 +89,9 @@ const LoginPage = () => {
         }
 
         AuthEvents.publish('auth-change', userData);
-        
+
         setSuccess(true);
-        
+
         // Kiểm tra role để hiển thị thông báo phù hợp và thực hiện chuyển hướng
         if (userData.role === 'admin') {
           setRedirectMessage('Đang chuyển hướng đến trang quản trị...');
@@ -100,7 +100,7 @@ const LoginPage = () => {
           }, 1500);
         } else {
           const lastViewedProduct = sessionStorage.getItem('lastViewedProduct');
-          
+
           if (lastViewedProduct) {
             try {
               const product = JSON.parse(lastViewedProduct);
@@ -122,7 +122,7 @@ const LoginPage = () => {
             }, 1500);
           }
         }
-        
+
       } catch (error) {
         console.error('Lỗi đăng nhập:', error);
         setErrors({ auth: 'Có lỗi xảy ra khi đăng nhập. Vui lòng thử lại sau.' });
@@ -154,7 +154,7 @@ const LoginPage = () => {
             ) : (
               <>
                 <h2 className="text-xl font-semibold text-green-500 mb-6 uppercase">Thông tin cá nhân</h2>
-                
+
                 <form onSubmit={handleSubmit}>
                   <div className="mb-4">
                     <label className="block text-gray-700 mb-2">
@@ -169,7 +169,7 @@ const LoginPage = () => {
                     />
                     {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                   </div>
-                  
+
                   <div className="mb-4">
                     <label className="block text-gray-700 mb-2">
                       Mật khẩu
@@ -183,7 +183,7 @@ const LoginPage = () => {
                     />
                     {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
                   </div>
-                  
+
                   <div className="mb-4">
                     <label className="flex items-center text-gray-700">
                       <input
@@ -199,13 +199,13 @@ const LoginPage = () => {
                       Bạn quên mật khẩu?
                     </a>
                   </div>
-                  
+
                   {errors.auth && (
                     <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
                       {errors.auth}
                     </div>
                   )}
-                  
+
                   <button
                     type="submit"
                     className={`px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors w-full ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
@@ -229,13 +229,13 @@ const LoginPage = () => {
           {/* Phần "Bạn chưa có tài khoản?" */}
           <div className="bg-white p-6 rounded shadow md:w-1/2">
             <h2 className="text-xl font-semibold text-green-500 mb-6 uppercase">Bạn chưa có tài khoản?</h2>
-            
+
             <p className="text-gray-600 mb-6">
               Đăng ký tài khoản ngay để có thể mua hàng nhanh chóng và sẽ được hưởng những ưu đãi cùng với rất nhiều chính sách và ưu đãi cho các thành viên của chúng tôi.
             </p>
-            
+
             <a
-              href="/dang-ky"
+              href="/register"
               className="inline-block px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
             >
               ĐĂNG KÝ

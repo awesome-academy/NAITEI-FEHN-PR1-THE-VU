@@ -639,122 +639,127 @@
     }
   ],
   "news": [
-    {
-      "id": "1",
-      "title": "Những Loại Cây Tốt Nhất Cho Vườn Trong Nhà",
-      "cover": "/images/spx2-3.png",
-      "content": [
-        "Việc làm vườn trong nhà ngày càng trở nên phổ biến khi mọi người muốn mang thiên nhiên vào không gian sống của mình, đặc biệt là ở các đô thị lớn nơi diện tích xanh ngày càng thu hẹp.",
-        "Một số loại cây đặc biệt phù hợp với môi trường trong nhà nhờ khả năng thích nghi cao và yêu cầu chăm sóc thấp, giúp người mới bắt đầu cũng có thể dễ dàng chăm sóc.",
-        "Cây sung, bao gồm cả loại Sung Lá Đàn (Fiddle Leaf Fig) nổi tiếng, là lựa chọn tuyệt vời cho những không gian có ánh sáng gián tiếp mạnh, mang lại vẻ đẹp sang trọng và hiện đại.",
-        "Cây Kim Tiền (Pachira aquatica) không chỉ làm đẹp không gian mà còn được tin rằng mang lại may mắn, tài lộc theo quan niệm phong thủy, rất được ưa chuộng trong các gia đình Việt Nam.",
-        "Ngoài ra, việc chọn cây trong nhà cần chú ý đến ánh sáng, độ ẩm và không gian để cây phát triển tốt nhất, đồng thời kết hợp yếu tố thẩm mỹ với phong cách nội thất."
-      ],
-      "comments": [
-        {
-          "username": "nguoi_yeu_cay",
-          "content": "Tôi đã rất thành công với cây Kim Tiền trong nhà!",
-          "created_at": "2023-10-18T08:45:00Z"
-        },
-        {
-          "username": "nguoi_lam_vuon_moi",
-          "content": "Cảm ơn các mẹo hay, tôi vừa mua cây Sung Lá Đàn đầu tiên!",
-          "created_at": "2023-10-19T15:20:00Z"
-        }
-      ],
-      "created_at": "2023-09-10T14:30:00Z"
-    },
-    {
-      "id": "2",
-      "title": "Mẹo Chăm Sóc Cây Theo Mùa",
-      "cover": "/images/spx2-2.png",
-      "content": [
-        "Khi các mùa thay đổi, việc chăm sóc cây cối cũng cần được điều chỉnh để đảm bảo chúng luôn khỏe mạnh và phát triển tốt qua các điều kiện thời tiết khác nhau.",
-        "Vào mùa xuân, đây là thời điểm lý tưởng để cắt tỉa cành và bón phân cho hầu hết các loại cây, vì chúng bắt đầu giai đoạn sinh trưởng tích cực sau thời kỳ nghỉ đông.",
-        "Trong mùa hè, cần chú trọng đến kỹ thuật tưới nước đúng cách để tránh tình trạng cây bị thiếu nước hoặc căng thẳng do hạn hán, đặc biệt với những cây non mới trồng.",
-        "Mùa thu là thời gian hoàn hảo để trồng cây mới, giúp rễ cây có thời gian phát triển và ổn định trước khi bước vào giai đoạn ngủ đông của mùa đông lạnh giá.",
-        "Vào mùa đông, việc bảo vệ cây là rất quan trọng, đặc biệt với các loài nhạy cảm với lạnh; bạn có thể quấn thân cây bằng vật liệu cách nhiệt hoặc phủ lớp mùn quanh gốc để giữ ấm.",
-        "Ngoài ra, cần theo dõi tình trạng đất và điều chỉnh lượng nước tưới phù hợp với từng mùa, đồng thời kiểm tra sâu bệnh định kỳ để xử lý kịp thời."
-      ],
-      "comments": [
-        {
-          "username": "nguoi_me_vuon",
-          "content": "Nhắc nhở tuyệt vời về việc trồng cây mùa thu! Tôi đang lên kế hoạch thêm vài cây Phong Nhật Bản vào vườn tháng tới.",
-          "created_at": "2023-10-05T11:30:00Z"
-        }
-      ],
-      "created_at": "2023-08-15T09:15:00Z"
-    },
-    {
-      "id": "3",
-      "title": "Lợi Ích Của Cây Xanh Đối Với Sức Khỏe Tinh Thần",
-      "cover": "/images/spx2-1.png",
-      "content": [
-        "Cây xanh không chỉ làm đẹp không gian sống mà còn mang lại nhiều lợi ích cho sức khỏe tinh thần, đặc biệt trong cuộc sống hiện đại đầy áp lực.",
-        "Nghiên cứu đã chỉ ra rằng việc tiếp xúc với thiên nhiên, dù chỉ qua những chậu cây trong nhà, có thể giúp giảm căng thẳng, lo âu và cải thiện tâm trạng một cách đáng kể.",
-        "Cây Trầu Bà (Epipremnum aureum) và Cây Cau Tiểu Trâm (Chamaedorea elegans) là những ví dụ điển hình, vừa dễ chăm sóc vừa có khả năng lọc không khí, mang lại cảm giác thư giãn.",
-        "Ngoài ra, việc chăm sóc cây cối còn được xem như một hình thức thiền định nhẹ nhàng, giúp con người tập trung hơn và tìm thấy sự bình yên trong những hoạt động đơn giản như tưới nước hay cắt tỉa lá.",
-        "Để tối ưu hóa lợi ích, hãy đặt cây ở những nơi bạn thường xuyên sinh hoạt như phòng làm việc hoặc phòng khách, tạo nên một không gian xanh gần gũi và thoải mái."
-      ],
-      "comments": [
-        {
-          "username": "yoga_và_cây",
-          "content": "Tôi đặt cây Trầu Bà ở bàn làm việc và cảm thấy thư giãn hơn hẳn!",
-          "created_at": "2024-03-12T09:15:00Z"
-        },
-        {
-          "username": "nguoi_sống_xanh",
-          "content": "Bài viết rất đúng, chăm cây thực sự giúp tôi bớt căng thẳng.",
-          "created_at": "2024-03-13T14:40:00Z"
-        }
-      ],
-      "created_at": "2024-02-20T07:45:00Z"
-    },
-    {
-      "id": "4",
-      "title": "Cách Chọn Cây Phù Hợp Với Phong Thủy",
-      "cover": "/images/spx2-4.png",
-      "content": [
-        "Phong thủy từ lâu đã là một yếu tố quan trọng trong văn hóa Á Đông, và việc chọn cây cảnh phù hợp có thể giúp cân bằng năng lượng trong không gian sống.",
-        "Cây Kim Tiền và Cây Hồng Môn (Anthurium andraeanum) thường được chọn vì chúng tượng trưng cho tài lộc và tình yêu, phù hợp để đặt ở hướng Đông Nam hoặc Tây Nam của ngôi nhà.",
-        "Ngược lại, các loại cây có gai như xương rồng nên tránh đặt ở khu vực sinh hoạt chính, vì theo phong thủy, chúng có thể tạo ra năng lượng tiêu cực hoặc gây xung đột.",
-        "Ngoài việc chọn loại cây, vị trí đặt cây cũng rất quan trọng; ví dụ, cây lớn như Phong Nhật Bản (Acer palmatum) nên đặt ở sân vườn để tránh chặn dòng chảy năng lượng trong nhà.",
-        "Hãy tham khảo ý kiến chuyên gia phong thủy hoặc thử nghiệm với những loại cây nhỏ trước khi quyết định bố trí cây lớn để đảm bảo hài hòa với không gian của bạn."
-      ],
-      "comments": [
-        {
-          "username": "phong_thuy_123",
-          "content": "Cảm ơn bài viết! Tôi sẽ thử đặt cây Hồng Môn ở phòng khách xem sao.",
-          "created_at": "2022-11-08T16:25:00Z"
-        }
-      ],
-      "created_at": "2022-10-01T12:10:00Z"
-    },
-    {
-      "id": "5",
-      "title": "Xu Hướng Trang Trí Vườn Nhỏ Năm 2025",
-      "cover": "/images/spx2-5.png",
-      "content": [
-        "Năm 2025 đang chứng kiến sự lên ngôi của các khu vườn nhỏ gọn, phù hợp với không gian sống hiện đại, đặc biệt ở các căn hộ hoặc nhà phố có diện tích hạn chế.",
-        "Cây bonsai như Tùng Bồng Lai (Podocarpus macrophyllus) và Sung (Ficus retusa) đang trở thành lựa chọn hàng đầu nhờ kích thước nhỏ và vẻ đẹp tinh tế, dễ dàng đặt trên bàn hoặc kệ.",
-        "Xu hướng sử dụng chậu treo với các loại cây leo như Trầu Bà hoặc dây leo nhỏ cũng được ưa chuộng, giúp tiết kiệm không gian mà vẫn tạo điểm nhấn xanh mát.",
-        "Ngoài ra, việc kết hợp cây xanh với các yếu tố trang trí như đèn LED, đá tự nhiên hoặc tiểu cảnh nước đang tạo nên những khu vườn mini độc đáo và đầy sáng tạo.",
-        "Để bắt kịp xu hướng, bạn có thể thử nghiệm với những loại cây ít cần chăm sóc nhưng vẫn giữ được vẻ đẹp lâu dài, phù hợp với lối sống bận rộn ngày nay."
-      ],
-      "comments": [
-        {
-          "username": "vuon_nho_dep",
-          "content": "Tôi vừa làm một góc bonsai nhỏ theo gợi ý, đẹp lắm!",
-          "created_at": "2025-01-20T10:50:00Z"
-        },
-        {
-          "username": "nguoi_thich_trang_tri",
-          "content": "Chậu treo là ý tưởng tuyệt vời, cảm ơn bài viết!",
-          "created_at": "2025-01-21T13:15:00Z"
-        }
-      ],
-      "created_at": "2024-12-15T08:20:00Z"
-    }
+  {
+    "id": "1",
+    "title": "Những Loại Cây Tốt Nhất Cho Vườn Trong Nhà",
+    "cover": "/images/spx2-3.png",
+    "content": [
+      "Việc làm vườn trong nhà ngày càng trở nên phổ biến khi mọi người muốn mang thiên nhiên vào không gian sống của mình, đặc biệt là ở các đô thị lớn nơi diện tích xanh ngày càng thu hẹp.",
+      "Một số loại cây đặc biệt phù hợp với môi trường trong nhà nhờ khả năng thích nghi cao và yêu cầu chăm sóc thấp, giúp người mới bắt đầu cũng có thể dễ dàng chăm sóc.",
+      "Cây sung, bao gồm cả loại Sung Lá Đàn (Fiddle Leaf Fig) nổi tiếng, là lựa chọn tuyệt vời cho những không gian có ánh sáng gián tiếp mạnh, mang lại vẻ đẹp sang trọng và hiện đại.",
+      "Cây Kim Tiền (Pachira aquatica) không chỉ làm đẹp không gian mà còn được tin rằng mang lại may mắn, tài lộc theo quan niệm phong thủy, rất được ưa chuộng trong các gia đình Việt Nam.",
+      "Ngoài ra, việc chọn cây trong nhà cần chú ý đến ánh sáng, độ ẩm và không gian để cây phát triển tốt nhất, đồng thời kết hợp yếu tố thẩm mỹ với phong cách nội thất."
+    ],
+    "comments": [
+      {
+        "username": "nguoi_yeu_cay",
+        "content": "Tôi đã rất thành công với cây Kim Tiền trong nhà!",
+        "created_at": "2023-10-18T08:45:00Z"
+      },
+      {
+        "username": "nguoi_lam_vuon_moi",
+        "content": "Cảm ơn các mẹo hay, tôi vừa mua cây Sung Lá Đàn đầu tiên!",
+        "created_at": "2023-10-19T15:20:00Z"
+      }
+    ],
+    "created_at": "2023-09-10T14:30:00Z",
+    "tags": ["Cây trong nhà", "Phong thủy", "Trang trí nội thất"]
+  },
+  {
+    "id": "2",
+    "title": "Mẹo Chăm Sóc Cây Theo Mùa",
+    "cover": "/images/spx2-2.png",
+    "content": [
+      "Khi các mùa thay đổi, việc chăm sóc cây cối cũng cần được điều chỉnh để đảm bảo chúng luôn khỏe mạnh và phát triển tốt qua các điều kiện thời tiết khác nhau.",
+      "Vào mùa xuân, đây là thời điểm lý tưởng để cắt tỉa cành và bón phân cho hầu hết các loại cây, vì chúng bắt đầu giai đoạn sinh trưởng tích cực sau thời kỳ nghỉ đông.",
+      "Trong mùa hè, cần chú trọng đến kỹ thuật tưới nước đúng cách để tránh tình trạng cây bị thiếu nước hoặc căng thẳng do hạn hán, đặc biệt với những cây non mới trồng.",
+      "Mùa thu là thời gian hoàn hảo để trồng cây mới, giúp rễ cây có thời gian phát triển và ổn định trước khi bước vào giai đoạn ngủ đông của mùa đông lạnh giá.",
+      "Vào mùa đông, việc bảo vệ cây là rất quan trọng, đặc biệt với các loài nhạy cảm với lạnh; bạn có thể quấn thân cây bằng vật liệu cách nhiệt hoặc phủ lớp mùn quanh gốc để giữ ấm.",
+      "Ngoài ra, cần theo dõi tình trạng đất và điều chỉnh lượng nước tưới phù hợp với từng mùa, đồng thời kiểm tra sâu bệnh định kỳ để xử lý kịp thời."
+    ],
+    "comments": [
+      {
+        "username": "nguoi_me_vuon",
+        "content": "Nhắc nhở tuyệt vời về việc trồng cây mùa thu! Tôi đang lên kế hoạch thêm vài cây Phong Nhật Bản vào vườn tháng tới.",
+        "created_at": "2023-10-05T11:30:00Z"
+      }
+    ],
+    "created_at": "2023-08-15T09:15:00Z",
+    "tags": ["Chăm sóc cây", "Theo mùa", "Kỹ thuật làm vườn"]
+  },
+  {
+    "id": "3",
+    "title": "Lợi Ích Của Cây Xanh Đối Với Sức Khỏe Tinh Thần",
+    "cover": "/images/spx2-1.png",
+    "content": [
+      "Cây xanh không chỉ làm đẹp không gian sống mà còn mang lại nhiều lợi ích cho sức khỏe tinh thần, đặc biệt trong cuộc sống hiện đại đầy áp lực.",
+      "Nghiên cứu đã chỉ ra rằng việc tiếp xúc với thiên nhiên, dù chỉ qua những chậu cây trong nhà, có thể giúp giảm căng thẳng, lo âu và cải thiện tâm trạng một cách đáng kể.",
+      "Cây Trầu Bà (Epipremnum aureum) và Cây Cau Tiểu Trâm (Chamaedorea elegans) là những ví dụ điển hình, vừa dễ chăm sóc vừa có khả năng lọc không khí, mang lại cảm giác thư giãn.",
+      "Ngoài ra, việc chăm sóc cây cối còn được xem như một hình thức thiền định nhẹ nhàng, giúp con người tập trung hơn và tìm thấy sự bình yên trong những hoạt động đơn giản như tưới nước hay cắt tỉa lá.",
+      "Để tối ưu hóa lợi ích, hãy đặt cây ở những nơi bạn thường xuyên sinh hoạt như phòng làm việc hoặc phòng khách, tạo nên một không gian xanh gần gũi và thoải mái."
+    ],
+    "comments": [
+      {
+        "username": "yoga_và_cây",
+        "content": "Tôi đặt cây Trầu Bà ở bàn làm việc và cảm thấy thư giãn hơn hẳn!",
+        "created_at": "2024-03-12T09:15:00Z"
+      },
+      {
+        "username": "nguoi_sống_xanh",
+        "content": "Bài viết rất đúng, chăm cây thực sự giúp tôi bớt căng thẳng.",
+        "created_at": "2024-03-13T14:40:00Z"
+      }
+    ],
+    "created_at": "2024-02-20T07:45:00Z",
+    "tags": ["Cây trong nhà", "Sức khỏe tinh thần", "Lọc không khí"]
+  },
+  {
+    "id": "4",
+    "title": "Cách Chọn Cây Phù Hợp Với Phong Thủy",
+    "cover": "/images/spx2-4.png",
+    "content": [
+      "Phong thủy từ lâu đã là một yếu tố quan trọng trong văn hóa Á Đông, và việc chọn cây cảnh phù hợp có thể giúp cân bằng năng lượng trong không gian sống.",
+      "Cây Kim Tiền và Cây Hồng Môn (Anthurium andraeanum) thường được chọn vì chúng tượng trưng cho tài lộc và tình yêu, phù hợp để đặt ở hướng Đông Nam hoặc Tây Nam của ngôi nhà.",
+      "Ngược lại, các loại cây có gai như xương rồng nên tránh đặt ở khu vực sinh hoạt chính, vì theo phong thủy, chúng có thể tạo ra năng lượng tiêu cực hoặc gây xung đột.",
+      "Ngoài việc chọn loại cây, vị trí đặt cây cũng rất quan trọng; ví dụ, cây lớn như Phong Nhật Bản (Acer palmatum) nên đặt ở sân vườn để tránh chặn dòng chảy năng lượng trong nhà.",
+      "Hãy tham khảo ý kiến chuyên gia phong thủy hoặc thử nghiệm với những loại cây nhỏ trước khi quyết định bố trí cây lớn để đảm bảo hài hòa với không gian của bạn."
+    ],
+    "comments": [
+      {
+        "username": "phong_thuy_123",
+        "content": "Cảm ơn bài viết! Tôi sẽ thử đặt cây Hồng Môn ở phòng khách xem sao.",
+        "created_at": "2022-11-08T16:25:00Z"
+      }
+    ],
+    "created_at": "2022-10-01T12:10:00Z",
+    "tags": ["Phong thủy", "Cây cảnh", "Trang trí nhà cửa"]
+  },
+  {
+    "id": "5",
+    "title": "Xu Hướng Trang Trí Vườn Nhỏ Năm 2025",
+    "cover": "/images/spx2-5.png",
+    "content": [
+      "Năm 2025 đang chứng kiến sự lên ngôi của các khu vườn nhỏ gọn, phù hợp với không gian sống hiện đại, đặc biệt ở các căn hộ hoặc nhà phố có diện tích hạn chế.",
+      "Cây bonsai như Tùng Bồng Lai (Podocarpus macrophyllus) và Sung (Ficus retusa) đang trở thành lựa chọn hàng đầu nhờ kích thước nhỏ và vẻ đẹp tinh tế, dễ dàng đặt trên bàn hoặc kệ.",
+      "Xu hướng sử dụng chậu treo với các loại cây leo như Trầu Bà hoặc dây leo nhỏ cũng được ưa chuộng, giúp tiết kiệm không gian mà vẫn tạo điểm nhấn xanh mát.",
+      "Ngoài ra, việc kết hợp cây xanh với các yếu tố trang trí như đèn LED, đá tự nhiên hoặc tiểu cảnh nước đang tạo nên những khu vườn mini độc đáo và đầy sáng tạo.",
+      "Để bắt kịp xu hướng, bạn có thể thử nghiệm với những loại cây ít cần chăm sóc nhưng vẫn giữ được vẻ đẹp lâu dài, phù hợp với lối sống bận rộn ngày nay."
+    ],
+    "comments": [
+      {
+        "username": "vuon_nho_dep",
+        "content": "Tôi vừa làm một góc bonsai nhỏ theo gợi ý, đẹp lắm!",
+        "created_at": "2025-01-20T10:50:00Z"
+      },
+      {
+        "username": "nguoi_thich_trang_tri",
+        "content": "Chậu treo là ý tưởng tuyệt vời, cảm ơn bài viết!",
+        "created_at": "2025-01-21T13:15:00Z"
+      }
+    ],
+    "created_at": "2024-12-15T08:20:00Z",
+    "tags": ["Xu hướng 2025", "Vườn nhỏ", "Trang trí sáng tạo"]
+  }
   ],
   "orders": [
     {
