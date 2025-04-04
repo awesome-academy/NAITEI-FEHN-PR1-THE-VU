@@ -691,7 +691,7 @@
       "id": "3",
       "user_id": 2,
       "user_name": "Trần Văn Hùng",
-      "status": "đang hủy",
+      "status": "đang giao",
       "trees": [
         {
           "name": "Phong Nhật Bản",
@@ -999,23 +999,33 @@
   "categories": [
     {
       "id": "1",
-      "name": "Cây Cảnh Quan"
+      "name": "Cây Cảnh Quan",
+      "description": "Cây trồng để trang trí và cải thiện cảnh quan ngoài trời"
     },
     {
       "id": "2",
-      "name": "Cây Bonsai"
+      "name": "Cây Bonsai",
+      "description": "Cây nhỏ được cắt tỉa nghệ thuật theo phong cách truyền thống"
     },
     {
       "id": "3",
-      "name": "Cây Trong Nhà"
+      "name": "Cây Trong Nhà",
+      "description": "Cây trồng trong nhà để trang trí và thanh lọc không khí"
     },
     {
       "id": "4",
-      "name": "Cây Ăn Quả"
+      "name": "Cây Ăn Quả",
+      "description": "Cây trồng để thu hoạch trái cây ăn được"
     },
     {
       "id": "5",
-      "name": "Cây Có Hoa"
+      "name": "Cây Có Hoa",
+      "description": "Cây trồng để lấy hoa đẹp phục vụ mục đích trang trí"
+    },
+    {
+      "name": "Cây Bóng Mát",
+      "description": "Những cây này thường là si, đa, ...",
+      "id": "K5L1uzx"
     }
   ],
   "notifications": [

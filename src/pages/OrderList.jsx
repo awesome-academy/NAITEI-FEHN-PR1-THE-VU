@@ -238,10 +238,7 @@ export default function OrderList() {
                   <td className="px-6 py-4">{getStatusBadge(order.status)}</td>
                   <td className="p-6 flex items-center justify-center">
                     {getActionButton(order.status).map((button, id) => (
-                      <Tooltip
-                        title={button.tooltip}
-                        key={id}
-                      >
+                      <Tooltip title={button.tooltip} key={id}>
                         <button
                           className={`rounded-full size-6 flex items-center justify-center text-white bg-gray-50 cursor-pointer hover:opacity-80 ${button.className}`}
                           onClick={() =>
