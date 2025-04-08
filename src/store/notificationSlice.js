@@ -1,12 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Create async thunk for fetching notifications
+const getUserId = () => {
+  const storedUser = localStorage.getItem('user') || sessionStorage.getItem('user');
+  if (storedUser) {
+    try {
+      const user = JSON.parse(storedUser);
+      return user.id;
+    } catch (error) {
+      console.error('Lỗi khi đọc thông tin người dùng:', error);
+      return null;
+    }
+  }
+  return null;
+};
+
 export const fetchNotifications = createAsyncThunk(
   'notifications/fetchNotifications',
   async (_, { rejectWithValue }) => {
     try {
-      const userId = 2; // Example user ID
+      const userId = getUserId();
       
       const response = await axios.get(`http://localhost:5000/notifications?user_id=${userId}`);
       

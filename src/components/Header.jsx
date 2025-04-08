@@ -422,13 +422,12 @@ export default function Header() {
                     </div>
                   </div>
                 </form>
-
-                {/* Thay thế phần giỏ hàng cũ bằng component CartDisplay */}
                 <CartDisplay />
-                
-                <div className="ml-4">
-                  <NotificationDropdown />
-                </div>
+                {currentUser && (
+                  <div className="ml-4">
+                    <NotificationDropdown />
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -526,10 +525,11 @@ export default function Header() {
                   onClick={() => setIsSearching(true)}
                 />
               )}
-              <div className="mr-3">
-                <NotificationDropdown />
-              </div>
-              {/* Sử dụng component giỏ hàng cho mobile */}
+              {currentUser && (
+                <div className="mr-3">
+                  <NotificationDropdown />
+                </div>
+              )}
               <MobileCartDisplay />
               {renderMobileUserMenu()}
             </div>

@@ -14,15 +14,33 @@ export default function RequestPlant() {
   const [loading, setLoading] = useState(false);
   const [fileList, setFileList] = useState([]);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [currentUser, setCurrentUser] = useState(() => {
+    const user = localStorage.getItem("user") || sessionStorage.getItem("user");
+    return user ? JSON.parse(user) : null;
+  });
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const [formData, setFormData] = useState({
     suggest_tree: {
+      user_id: "",
       name: "",
       description: "",
-      images: [],
-      status: "đang chờ"
+      images: [] 
     },
+    status: "đang chờ",
     created_at: new Date().toISOString(),
   });
 
@@ -82,6 +100,11 @@ export default function RequestPlant() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!currentUser) {
+      showModal();
+      return;
+    }
+
     if (!formData.suggest_tree.name || formData.suggest_tree.name.length < 3) {
       alert("Tên cây phải có ít nhất 3 ký tự!");
       return;
@@ -104,6 +127,7 @@ export default function RequestPlant() {
 
       const updatedFormData = {
         ...formData,
+        user_id: currentUser.id,
         suggest_tree: {
           ...formData.suggest_tree,
           images: cloudinaryUrls.filter((url) => url !== null),
@@ -226,7 +250,29 @@ export default function RequestPlant() {
               >
                 <SendOutlined className="mr-2" />
                 Gửi yêu cầu
-              </button>
+              </button> 
+
+              <Modal 
+                open={isModalOpen}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                footer={null}
+              >
+                <div className="flex flex-col items-center justify-center my-4">
+                  <p className="text-lg font-semibold mb-2 text-red-500">
+                    Bạn cần đăng nhập để gửi yêu cầu này.
+                  </p>
+                  <Button
+                    type="primary"
+                    onClick={() => {
+                      navigate("/login");
+                    }}
+                    className="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
+                  >
+                    Đăng nhập
+                  </Button>
+                </div>
+              </Modal>
 
               <button
                 type="button"
