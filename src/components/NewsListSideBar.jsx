@@ -53,7 +53,7 @@ export default function NewsListSideBar({ tags, selectedTags, onTagClick }) {
         <ul>
           {outstandingNews.map((news) => (
             <li key={news.id}>
-              <a href={`/news/${news.id}`} className="flex items-start mb-2 bg-gray-50 rounded">
+              <a href={`/new/${news.id}`} className="flex items-start mb-2 bg-gray-50 rounded">
                 <img src={news.cover} alt="" className="size-14 mr-2 rounded-l" />
                 <p className="text-[0.65rem] font-beVietNamPro mt-0.5 text-gray-900 hover:text-hover">{news.title}</p>
               </a>
