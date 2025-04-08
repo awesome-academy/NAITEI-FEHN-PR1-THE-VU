@@ -21,6 +21,7 @@ import AdminProductList from "./pages/AdminProductList.jsx";
 import HistoryOrder from "./pages/HistoryOrder.jsx";
 import NewsList from "./pages/NewsList.jsx";
 import PlantRequestList from "./pages/PlantRequestList.jsx";
+import NewsDetails from "./pages/NewDetails.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -37,6 +38,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/request-plant" element={<RequestPlant />} />
             <Route path="/order-history" element={<HistoryOrder />} />
             <Route path="/news" element={<NewsList />} />
+            <Route path="/new/:id" element={<NewsDetails />} />
           </Route>
           <Route path="/admin" element={<AdminDashboard />}>
             <Route index element={<Statistics />} />

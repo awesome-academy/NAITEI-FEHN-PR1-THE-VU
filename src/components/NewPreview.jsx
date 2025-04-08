@@ -6,7 +6,7 @@ import {
 
 export default function NewPreview({ news }) {
   return (
-    <a href={`/news/${news.id}`} className="">
+    <a href={`/new/${news.id}`} className="">
       <h3 className="hover:text-hover cursor-pointer">{news.title}</h3>
       <div className="flex text-xs text-gray-600 mt-2 mb-4">
         <span className="mr-2 flex items-center justify-center">
