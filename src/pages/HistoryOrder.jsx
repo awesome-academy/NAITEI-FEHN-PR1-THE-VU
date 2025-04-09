@@ -21,7 +21,13 @@ export default function HistoryOrder() {
     const fetchOrders = async () => {
       try {
         setLoading(true);
-        const userId = 2; // Example: user with ID 2
+        const currentUser = localStorage.getItem('user') || sessionStorage.getItem('user');
+
+        if (!currentUser) {
+          setError("Vui lòng đăng nhập để xem lịch sử đơn hàng");
+          return;
+        }
+        const userId = JSON.parse(currentUser).id;
         
         const orderResponse = await axios.get(`http://localhost:5000/orders?user_id=${userId}`);
         
@@ -33,7 +39,9 @@ export default function HistoryOrder() {
         });
         
         setProducts(productsMap);
+        console.log(productsMap);
         setOrders(orderResponse.data);
+        console.log(orderResponse.data);
       } catch (err) {
         setError(err.message || "Không thể tải dữ liệu đơn hàng");
       } finally {

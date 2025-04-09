@@ -654,6 +654,31 @@
       ],
       "bought": 0,
       "created_at": "2025-04-04T09:01:08.225Z"
+    },
+    {
+      "id": "6a96KzR",
+      "name": "Lan Đột Biên",
+      "scienceName": "Acer palmatum",
+      "price": "10000",
+      "old_price": "200000",
+      "color": "Đỏ",
+      "category": "1",
+      "description": "Lan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột Biên",
+      "tags": [
+        "Trong nhà",
+        "Cây cảnh"
+      ],
+      "information": {
+        "family": "Sapindaceae",
+        "height": "4.5-7.5 mét",
+        "fullDescription": ""
+      },
+      "image": [
+        "https://res.cloudinary.com/dvvzcljcn/image/upload/v1744128316/08-chi-tiet-tin_jytlsw.png",
+        "https://res.cloudinary.com/dvvzcljcn/image/upload/v1744128362/08-chi-tiet-tin_bijlcx.png"
+      ],
+      "bought": 0,
+      "created_at": "2025-04-08T16:05:38.097Z"
     }
   ],
   "news": [
@@ -870,6 +895,7 @@
       "status": "đang xử lý",
       "trees": [
         {
+          "id": "1",
           "name": "Bonsai Sung",
           "quantity": 1
         }
@@ -886,10 +912,12 @@
       "status": "đang giao",
       "trees": [
         {
+          "id": "2",
           "name": "Phong Nhật Bản",
           "quantity": 3
         },
         {
+          "id": "3",
           "name": "Cây Hoa Sứ",
           "quantity": 1
         }
@@ -906,6 +934,7 @@
       "status": "đã hủy",
       "trees": [
         {
+          "id": "4",
           "name": "Cây Lộc Vừng",
           "quantity": 2
         }
@@ -922,10 +951,12 @@
       "status": "đã giao",
       "trees": [
         {
+          "id": "5",
           "name": "Bonsai Sung",
           "quantity": 1
         },
         {
+          "id": "6",
           "name": "Cây Kim Tiền",
           "quantity": 1
         }
@@ -942,6 +973,7 @@
       "status": "đang giao",
       "trees": [
         {
+          "id": "7",
           "name": "Phong Nhật Bản",
           "quantity": 4
         }
@@ -958,10 +990,12 @@
       "status": "đã giao",
       "trees": [
         {
+          "id": "8",
           "name": "Cây Kim Tiền",
           "quantity": 2
         },
         {
+          "id": "9",
           "name": "Cây Lộc Vừng",
           "quantity": 1
         }
@@ -978,6 +1012,7 @@
       "status": "đang xử lý",
       "trees": [
         {
+          "id": "10",
           "name": "Cây Hoa Sứ",
           "quantity": 3
         }
@@ -989,15 +1024,17 @@
     },
     {
       "id": "9",
-      "user_id": 10,
+      "user_id": 3,
       "user_name": "Bùi Văn Long",
       "status": "đã giao",
       "trees": [
         {
+          "id": "11",
           "name": "Bonsai Sung",
           "quantity": 2
         },
         {
+          "id": "12",
           "name": "Phong Nhật Bản",
           "quantity": 1
         }
@@ -1009,11 +1046,12 @@
     },
     {
       "id": "10",
-      "user_id": 11,
+      "user_id": 3,
       "user_name": "Trương Thị Thu",
       "status": "đang xử lý",
       "trees": [
         {
+          "id": "13",
           "name": "Cây Lộc Vừng",
           "quantity": 1
         }
@@ -1025,15 +1063,17 @@
     },
     {
       "id": "11",
-      "user_id": 12,
+      "user_id": 3,
       "user_name": "Ngô Văn Nam",
       "status": "đã giao",
       "trees": [
         {
+          "id": "1",
           "name": "Cây Kim Tiền",
           "quantity": 3
         },
         {
+          "id": "2",
           "name": "Cây Hoa Sứ",
           "quantity": 2
         }
@@ -1045,11 +1085,12 @@
     },
     {
       "id": "12",
-      "user_id": 13,
+      "user_id": 3,
       "user_name": "Lý Thị Hoa",
       "status": "đang xử lý",
       "trees": [
         {
+          "id": "3",
           "name": "Phong Nhật Bản",
           "quantity": 2
         }
@@ -1061,15 +1102,17 @@
     },
     {
       "id": "13",
-      "user_id": 14,
+      "user_id": 3,
       "user_name": "Đặng Văn Khoa",
       "status": "đã giao",
       "trees": [
         {
+          "id": "4",
           "name": "Bonsai Sung",
           "quantity": 1
         },
         {
+          "id": "5",
           "name": "Cây Lộc Vừng",
           "quantity": 1
         }
@@ -1081,11 +1124,12 @@
     },
     {
       "id": "14",
-      "user_id": 15,
+      "user_id": 3,
       "user_name": "Phan Thị Linh",
       "status": "đang xử lý",
       "trees": [
         {
+          "id": "6",
           "name": "Cây Hoa Sứ",
           "quantity": 2
         }
@@ -1097,15 +1141,17 @@
     },
     {
       "id": "15",
-      "user_id": 16,
+      "user_id": 3,
       "user_name": "Tô Văn Bình",
       "status": "đã giao",
       "trees": [
         {
+          "id": "7",
           "name": "Phong Nhật Bản",
           "quantity": 1
         },
         {
+          "id": "8",
           "name": "Cây Kim Tiền",
           "quantity": 1
         }
@@ -1117,11 +1163,12 @@
     },
     {
       "id": "16",
-      "user_id": 17,
+      "user_id": 3,
       "user_name": "Hồ Thị Yến",
       "status": "đang xử lý",
       "trees": [
         {
+          "id": "9",
           "name": "Bonsai Sung",
           "quantity": 3
         }
@@ -1133,15 +1180,17 @@
     },
     {
       "id": "17",
-      "user_id": 18,
+      "user_id": 3,
       "user_name": "Mai Văn Phong",
       "status": "đã giao",
       "trees": [
         {
+          "id": "10",
           "name": "Cây Lộc Vừng",
           "quantity": 2
         },
         {
+          "id": "11",
           "name": "Cây Hoa Sứ",
           "quantity": 1
         }
@@ -1300,6 +1349,7 @@
       "id": "2"
     },
     {
+      "user_id": "2",
       "suggest_tree": {
         "name": "Cây Nguyen Tuan Huy",
         "description": "Mô tả cho Cây Nguyen Tuan Huy",
@@ -1312,6 +1362,20 @@
       "created_at": "2025-04-03T03:33:46.057Z",
       "status": "đã duyệt",
       "id": "4Atf8F5"
+    },
+    {
+      "suggest_tree": {
+        "user_id": "",
+        "name": "Lan Đột Biên",
+        "description": "Lan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột BiênLan Đột Biên",
+        "images": [
+          "https://res.cloudinary.com/dvvzcljcn/image/upload/v1744128316/08-chi-tiet-tin_jytlsw.png"
+        ]
+      },
+      "status": "đã duyệt",
+      "created_at": "2025-04-08T16:04:51.764Z",
+      "user_id": "2",
+      "id": "r_BOJYA"
     }
   ],
   "categories": [
@@ -1387,12 +1451,20 @@
       "id": "XM_tETQ"
     },
     {
-      "user_id": "undefined",
+      "user_id": "3",
       "title": "Yêu cầu thêm cây mới đã được duyệt",
       "content": "Yêu cầu thêm cây \"Cây Nguyen Tuan Huy\" của bạn đã được duyệt.",
       "read": false,
       "created_at": "2025-04-04T09:01:30.752Z",
       "id": "SkTZcvF"
+    },
+    {
+      "user_id": "2",
+      "title": "Yêu cầu thêm cây mới đã được duyệt",
+      "content": "Yêu cầu thêm cây \"Lan Đột Biên\" của bạn đã được duyệt.",
+      "read": false,
+      "created_at": "2025-04-08T16:06:03.600Z",
+      "id": "u830wN5"
     }
   ]
 }
