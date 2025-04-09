@@ -1,6 +1,6 @@
 import { PencilIcon, PlusIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Select, Upload } from "antd";
-import { PlusOutlined, SendOutlined } from "@ant-design/icons";
+import { PlusOutlined } from "@ant-design/icons";
 import { message } from "antd";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -12,7 +12,13 @@ const cloudinaryConfig = {
 
 const urlParams = new URLSearchParams(window.location.href.split("?")[1]);
 
-export default function ProductModal({ isOpen, onClose, onOpen, product = null }) {
+export default function ProductModal({
+  isOpen,
+  onClose,
+  onOpen,
+  afterSubmit,
+  product = null,
+}) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState(null);
@@ -23,7 +29,7 @@ export default function ProductModal({ isOpen, onClose, onOpen, product = null }
   const [formData, setFormData] = useState({
     id: null,
     name: "",
-    scienceName: "",
+    science_name: "",
     price: "",
     old_price: "",
     color: "",
@@ -32,7 +38,7 @@ export default function ProductModal({ isOpen, onClose, onOpen, product = null }
     information: {
       family: "",
       height: "",
-      fullDescription: "",
+      full_description: "",
     },
     image: [],
   });
@@ -192,6 +198,7 @@ export default function ProductModal({ isOpen, onClose, onOpen, product = null }
           created_at: new Date().toISOString(),
         });
         setFileList([]);
+        afterSubmit(response.data);
       } else {
         alert("Đã có lỗi xảy ra. Vui lòng thử lại sau!");
       }
@@ -241,7 +248,7 @@ export default function ProductModal({ isOpen, onClose, onOpen, product = null }
     setFormData({
       id: product?.id || null,
       name: product?.name || urlParams.get("name") || "",
-      scienceName: product?.science_name || "",
+      science_name: product?.science_name || "",
       price: product?.price || "",
       old_price: product?.old_price || "",
       color: product?.color || "",
@@ -251,7 +258,7 @@ export default function ProductModal({ isOpen, onClose, onOpen, product = null }
       information: {
         family: product?.information?.family || "",
         height: product?.information?.height || "",
-        fullDescription: product?.information?.full_description || "",
+        full_description: product?.information?.full_description || "",
       },
       image: product?.image || [],
       bought: product?.bought || 0,
@@ -318,18 +325,18 @@ export default function ProductModal({ isOpen, onClose, onOpen, product = null }
               </div>
               <div className="col-span-2">
                 <label
-                  htmlFor="scienceName"
+                  htmlFor="science_name"
                   className="block mb-2 text-sm font-medium text-gray-900"
                 >
                   Tên khoa học
                 </label>
                 <input
                   type="text"
-                  name="scienceName"
-                  id="scienceName"
+                  name="science_name"
+                  id="science_name"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   placeholder="Rosa"
-                  value={formData.scienceName}
+                  value={formData.science_name}
                   onChange={handleInputChange}
                 />
               </div>
@@ -466,18 +473,18 @@ export default function ProductModal({ isOpen, onClose, onOpen, product = null }
               </div>
               <div className="col-span-2">
                 <label
-                  htmlFor="fullDescription"
+                  htmlFor="full_description"
                   className="block mb-2 text-sm font-medium text-gray-900"
                 >
                   Mô tả chi tiết
                 </label>
                 <textarea
-                  id="fullDescription"
-                  name="fullDescription"
+                  id="full_description"
+                  name="full_description"
                   rows="2"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Hoa hồng là một loài hoa phổ biến..."
-                  value={formData.information.fullDescription}
+                  value={formData.information.full_description}
                   onChange={handleInformationChange}
                 />
               </div>

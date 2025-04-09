@@ -138,8 +138,8 @@ export default function PlantRequestList() {
           "đã từ chối": "Đã từ chối",
         };
         return (
-          <span className={`px-2 py-1 rounded-full text-xs ${statusColors[status || 'pending']}`}>
-            {statusText[status || 'pending']}
+          <span className={`px-2 py-1 rounded-full text-xs ${statusColors[status || 'đang chờ']}`}>
+            {statusText[status || 'đang chờ']}
           </span>
         );
       },
@@ -179,7 +179,7 @@ export default function PlantRequestList() {
   return (
     <div className="px-2.5 py-1">
       <SectionHeading heading="Danh sách yêu cầu thêm cây mới" />
-      
+
       <Table
         columns={columns}
         dataSource={requests}
@@ -222,9 +222,9 @@ export default function PlantRequestList() {
         onCancel={() => setImageModalVisible(false)}
         width={800}
       >
-        <img 
-          src={selectedImage} 
-          alt="plant preview" 
+        <img
+          src={selectedImage}
+          alt="plant preview"
           className="w-full h-auto max-h-[70vh] object-contain"
         />
       </Modal>

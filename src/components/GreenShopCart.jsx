@@ -57,7 +57,7 @@ const GreenShopCart = () => {
       try {
         setLoading(true);
         const response = await axios.get(`http://localhost:5000/orders?user_id=${currentUser.id}&status=trong giỏ hàng`);
-        
+
         if (response.data.length > 0) {
           setCart(response.data[0]);
           setCartItems(response.data[0].trees || []);
@@ -72,7 +72,7 @@ const GreenShopCart = () => {
             created_at: new Date().toISOString(),
             total: 0
           };
-          
+
           const createResponse = await axios.post('http://localhost:5000/orders', newCart);
           setCart(createResponse.data);
           setCartItems([]);
@@ -91,9 +91,9 @@ const GreenShopCart = () => {
   // Cập nhật số lượng sản phẩm
   const handleQuantityChange = async (productId, quantity) => {
     if (!cart || quantity < 1) return;
-    
+
     setUpdatingItem(productId);
-    
+
     try {
       // Cập nhật số lượng sản phẩm trong state
       const updatedItems = cartItems.map(item => {
@@ -102,26 +102,26 @@ const GreenShopCart = () => {
         }
         return item;
       });
-      
+
       // Cập nhật tổng tiền
       const updatedTotal = updatedItems.reduce(
-        (sum, item) => sum + item.price * item.quantity, 
+        (sum, item) => sum + item.price * item.quantity,
         0
       );
-      
+
       // Cập nhật state trước để UI phản hồi nhanh hơn
       setCartItems(updatedItems);
       setCart({ ...cart, trees: updatedItems, total: updatedTotal });
-      
+
       // Gửi yêu cầu cập nhật lên server
       await axios.patch(`http://localhost:5000/orders/${cart.id}`, {
         trees: updatedItems,
         total: updatedTotal
       });
-      
+
       // Thông báo sự thay đổi giỏ hàng cho các component khác
       AuthEvents.publish('cart-update', null);
-      
+
     } catch (error) {
       console.error('Lỗi khi cập nhật số lượng:', error);
       toast.error('Cập nhật số lượng thất bại. Vui lòng thử lại.');
@@ -140,29 +140,29 @@ const GreenShopCart = () => {
 
   const handleRemoveItem = async (productId) => {
     if (!cart) return;
-    
+
     setDeletingItem(productId);
-    
+
     try {
       const updatedItems = cartItems.filter(item => item.id !== productId);
-      
+
       const updatedTotal = updatedItems.reduce(
-        (sum, item) => sum + item.price * item.quantity, 
+        (sum, item) => sum + item.price * item.quantity,
         0
       );
-      
+
       setCartItems(updatedItems);
       setCart({ ...cart, trees: updatedItems, total: updatedTotal });
-      
+
       await axios.patch(`http://localhost:5000/orders/${cart.id}`, {
         trees: updatedItems,
         total: updatedTotal
       });
-      
+
       AuthEvents.publish('cart-update', null);
-      
+
       toast.success('Đã xóa sản phẩm khỏi giỏ hàng');
-      
+
     } catch (error) {
       console.error('Lỗi khi xóa sản phẩm:', error);
       toast.error('Xóa sản phẩm thất bại. Vui lòng thử lại.');
@@ -180,18 +180,18 @@ const GreenShopCart = () => {
 
   const handleUpdateCart = async () => {
     if (!cart) return;
-    
+
     try {
- 
+
       await axios.patch(`http://localhost:5000/orders/${cart.id}`, {
         trees: cartItems,
         total: subtotal
       });
-      
+
       AuthEvents.publish('cart-update', null);
-      
+
       toast.success('Đã cập nhật giỏ hàng');
-      
+
     } catch (error) {
       console.error('Lỗi khi cập nhật giỏ hàng:', error);
       toast.error('Cập nhật giỏ hàng thất bại. Vui lòng thử lại.');
@@ -209,14 +209,14 @@ const GreenShopCart = () => {
   const handleItemQuantityInputChange = (e, productId) => {
     const quantity = parseInt(e.target.value);
     if (isNaN(quantity) || quantity < 1) return;
-    
+
     const updatedItems = cartItems.map(item => {
       if (item.id === productId) {
         return { ...item, quantity };
       }
       return item;
     });
-    
+
     setCartItems(updatedItems);
   };
 
@@ -230,17 +230,17 @@ const GreenShopCart = () => {
 
   const handleSubmitOrder = async (e) => {
     e.preventDefault();
-    
+
     if (!currentUser || !cart) {
       toast.error('Vui lòng đăng nhập để đặt hàng');
       return;
     }
-    
+
     try {
       const orderData = {
         user_id: currentUser.id,
         user_name: formData.fullName,
-        status: "đã đặt",
+        status: "đang xử lý",
         trees: cartItems,
         address: formData.address,
         phone: formData.phone,
@@ -249,22 +249,22 @@ const GreenShopCart = () => {
         created_at: new Date().toISOString(),
         total: subtotal + tax
       };
-      
+
       await axios.post('http://localhost:5000/orders', orderData);
-      
+
       await axios.patch(`http://localhost:5000/orders/${cart.id}`, {
         trees: [],
         total: 0
       });
-      
+
       setCartItems([]);
       setCart({ ...cart, trees: [], total: 0 });
-      
+
       AuthEvents.publish('cart-update', null);
-      
+
       setIsCheckoutOpen(false);
       setIsSuccessOpen(true);
-      
+
     } catch (error) {
       console.error('Lỗi khi đặt hàng:', error);
       toast.error('Đặt hàng thất bại. Vui lòng thử lại sau.');
@@ -298,12 +298,12 @@ const GreenShopCart = () => {
 
       <div className="max-w-7xl mx-auto px-4 pb-12">
         <h2 className="text-2xl text-green-500 font-medium py-4">GIỎ HÀNG</h2>
-        
+
         {cartItems.length === 0 ? (
           <div className="bg-white p-8 rounded-lg shadow-sm text-center">
             <p className="text-gray-500 mb-4">Giỏ hàng của bạn đang trống.</p>
-            <a 
-              href="/products" 
+            <a
+              href="/products"
               className="inline-block px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
             >
               Tiếp tục mua sắm
@@ -320,7 +320,7 @@ const GreenShopCart = () => {
                 <div className="w-32 p-3 text-center font-normal">THÀNH TIỀN</div>
                 <div className="w-16 p-3 text-center font-normal">XÓA</div>
               </div>
-              
+
               {cartItems.map((item) => (
                 <div key={item.id} className="flex bg-white border-b">
                   <div className="w-24 p-4 text-center">
@@ -334,7 +334,7 @@ const GreenShopCart = () => {
                   </div>
                   <div className="w-32 p-4 text-center flex items-center justify-center">
                     <div className="flex border border-gray-300 rounded">
-                      <button 
+                      <button
                         className="px-2 bg-gray-100 border-r border-gray-300"
                         onClick={() => handleQuantityChange(item.id, Math.max(1, item.quantity - 1))}
                         disabled={updatingItem === item.id}
@@ -349,7 +349,7 @@ const GreenShopCart = () => {
                         onBlur={(e) => handleQuantityChange(item.id, parseInt(e.target.value) || 1)}
                         className="w-12 h-8 text-center outline-none"
                       />
-                      <button 
+                      <button
                         className="px-2 bg-gray-100 border-l border-gray-300"
                         onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
                         disabled={updatingItem === item.id}
@@ -362,7 +362,7 @@ const GreenShopCart = () => {
                     {(item.price * item.quantity).toLocaleString()} đ
                   </div>
                   <div className="w-16 p-4 text-center flex items-center justify-center">
-                    <button 
+                    <button
                       className="text-gray-400 hover:text-red-500"
                       onClick={() => handleRemoveItem(item.id)}
                       disabled={deletingItem === item.id}
@@ -379,11 +379,11 @@ const GreenShopCart = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="mt-6 flex justify-between">
               <div className="flex-1"></div>
               <div className="flex gap-2">
-                <button 
+                <button
                   className="h-12 px-4 bg-white border border-gray-300 rounded text-gray-600 hover:bg-gray-100 flex items-center justify-center"
                   onClick={handleUpdateCart}
                 >
@@ -397,7 +397,7 @@ const GreenShopCart = () => {
                 </a>
               </div>
             </div>
-            
+
             <div className="mt-6 flex justify-end">
               <div className="w-96 border border-gray-200 rounded bg-white">
                 <div className="p-4">
@@ -405,19 +405,19 @@ const GreenShopCart = () => {
                     <span className="text-gray-700">TỔNG TIỀN (CHƯA THUẾ)</span>
                     <span className="text-green-500 font-medium">{subtotal.toLocaleString()} đ</span>
                   </div>
-                  
+
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-gray-700">THUẾ (VAT 10%)</span>
                     <span className="text-green-500 font-medium">{tax.toLocaleString()} đ</span>
                   </div>
-                  
+
                   <div className="flex justify-between items-center bg-green-500 text-white p-3 mb-4">
                     <span className="font-medium">TỔNG PHẢI THANH TOÁN</span>
                     <span className="font-medium">{total.toLocaleString()} đ</span>
                   </div>
-                  
+
                   <div className="flex justify-end">
-                    <button 
+                    <button
                       onClick={handleCheckout}
                       className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
                     >
@@ -432,7 +432,7 @@ const GreenShopCart = () => {
       </div>
 
       {isCheckoutOpen && (
-        <CheckoutPopup 
+        <CheckoutPopup
           formData={formData}
           total={total}
           onInputChange={handleInputChange}
