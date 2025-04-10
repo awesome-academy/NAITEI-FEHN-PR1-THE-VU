@@ -53,11 +53,11 @@ export default function OrderList() {
   };
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchOrders = async () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://localhost:5000/orders?&_sort=status`,
+          `http://localhost:5000/orders?status_ne=trong giỏ hàng&_sort=status`,
         );
         const data = await response.json();
         setOrders(data);
@@ -69,7 +69,7 @@ export default function OrderList() {
       }
     };
 
-    fetchUsers();
+    fetchOrders();
   }, []);
 
   useEffect(() => {

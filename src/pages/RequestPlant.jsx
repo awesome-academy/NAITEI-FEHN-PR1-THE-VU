@@ -38,7 +38,7 @@ export default function RequestPlant() {
       user_id: "",
       name: "",
       description: "",
-      images: [] 
+      images: []
     },
     status: "đang chờ",
     created_at: new Date().toISOString(),
@@ -250,9 +250,9 @@ export default function RequestPlant() {
               >
                 <SendOutlined className="mr-2" />
                 Gửi yêu cầu
-              </button> 
+              </button>
 
-              <Modal 
+              <Modal
                 open={isModalOpen}
                 onOk={handleOk}
                 onCancel={handleCancel}

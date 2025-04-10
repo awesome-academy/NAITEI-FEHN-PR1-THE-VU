@@ -30,16 +30,35 @@ export default function AdminProductList() {
     setCurrentPage(page);
   };
 
+  const handleAfterModalSubmit = (updatedProduct) => {
+    if (products.some((p) => p.id === updatedProduct.id)) {
+      setProducts((prevProducts) =>
+        prevProducts.map((p) =>
+          p.id === updatedProduct.id ? { ...p, ...updatedProduct } : p,
+        ),
+      );
+      setFilteredProducts((prevProducts) =>
+        prevProducts.map((p) =>
+          p.id === updatedProduct.id ? { ...p, ...updatedProduct } : p,
+        ),
+      );
+    } else {
+      setProducts((prevProducts) => [...prevProducts, updatedProduct]);
+      setFilteredProducts((prevProducts) => [...prevProducts, updatedProduct]);
+    }
+  };
+
   const handleDeleteProduct = async (id) => {
     if (confirm("Bạn có chắn chắn muốn xóa sản phẩm này?")) {
       setLoading(true);
       try {
         await axios.delete(`http://localhost:5000/trees/${id}`);
 
-        setProducts((prevProducts) => prevProducts.map((p) => p.id !== id));
+        setProducts((prevProducts) => prevProducts.filter((p) => p.id !== id));
         setFilteredProducts((prevProducts) =>
-          prevProducts.map((p) => p.id !== id),
+          prevProducts.filter((p) => p.id !== id),
         );
+        setSearchTerm("");
       } catch (err) {
         setError(err.message);
       } finally {
@@ -110,6 +129,7 @@ export default function AdminProductList() {
           setSelectedProduct(null);
         }}
         onOpen={() => setModalOpen(true)}
+        afterSubmit={handleAfterModalSubmit}
         product={selectedProduct}
       />
 

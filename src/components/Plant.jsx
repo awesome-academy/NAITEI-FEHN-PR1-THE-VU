@@ -2,7 +2,7 @@ import Plant1 from "../assets/spx2-1.png";
 import { MagnifyingGlassIcon, StarIcon } from "@heroicons/react/24/solid";
 import formatMoney from "../helper/FormatMoney";
 
-export default function Plant({ plant }) {
+export default function Plant({ plant, disabled, onClick }) {
   const rating =
     plant.average_rating !== -1 ? (
       <div className="flex items-center justify-center my-1.5 space-x-1">
@@ -50,7 +50,11 @@ export default function Plant({ plant }) {
           alt={plant.name}
         />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 py-2 text-gray-900 font-medium flex items-center justify-center">
-          <button className="bg-main text-white rounded-full px-5 py-2 cursor-pointer hover:bg-hover mr-3 text-[0.6rem] md:text-xs truncate">
+          <button
+            onClick={() => onClick(plant)}
+            disabled={disabled}
+            className={`bg-main text-white rounded-full px-5 py-2 hover:bg-hover mr-3 text-[0.6rem] md:text-xs truncate ${disabled ? "cursor-not-allowed" : "cursor-pointer"}`}
+          >
             MUA NGAY
           </button>
           <a href={`/product/${plant.id}`}>

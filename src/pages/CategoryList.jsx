@@ -36,11 +36,12 @@ export default function CategoryList() {
         await axios.delete(`http://localhost:5000/categories/${id}`);
 
         setCategories((prevCategories) =>
-          prevCategories.map((c) => c.id !== id),
+          prevCategories.filter((c) => c.id !== id),
         );
         setFilteredCategories((prevCategories) =>
-          prevCategories.map((c) => c.id !== id),
+          prevCategories.filter((c) => c.id !== id),
         );
+        setSearchTerm("");
       } catch (err) {
         setError(err.message);
       } finally {

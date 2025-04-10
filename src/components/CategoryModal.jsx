@@ -31,7 +31,6 @@ export default function CategoryModal({
       alert("Mô tả phải dài hơn 20 ký tự!");
       return;
     }
-    console.log(formData);
     onSubmit(formData);
     onClose();
   };

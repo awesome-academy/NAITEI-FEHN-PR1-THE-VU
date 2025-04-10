@@ -104,7 +104,7 @@ const LoginPage = () => {
               setRedirectMessage('Đang quay lại trang sản phẩm...');
               setTimeout(() => {
                 sessionStorage.removeItem('lastViewedProduct');
-                navigate(`/products/${product.id}`);
+                navigate(`/product/${product.id}`);
               }, 1500);
             } catch (e) {
               setRedirectMessage('Đang chuyển hướng về trang chủ...');
@@ -225,7 +225,7 @@ const LoginPage = () => {
             </p>
 
             <a
-              href="/dang-ky"
+              href="/register"
               className="inline-block px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
             >
               ĐĂNG KÝ
